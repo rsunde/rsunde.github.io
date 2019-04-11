@@ -27,16 +27,16 @@ Hur ser då dessa olika databaser ut? *bilder stulna från [ThoughtWorks](https:
 
 
 **Relational**
-<img src="/assets/images/sqlrelational.png">
+<img style="width: 50%" src="/assets/images/sqlrelational.png">
 
 **Document**
-![](/assets/images/nosqldocumentdb.png)
+<img style="width: 50%" src="/assets/images/nosqldocumentdb.png">
 
 **Key-Value**
-![](/assets/images/nosql-key-value-database.png)
+<img style="width: 50%" src="/assets/images/nosqlkeyvaluedatabase.png">
 
 **Wide-Column**
-![](/assets/images/nosqlcolumnfamily.png)
+<img style="width: 50%" src="/assets/images/nosqlcolumnfamily.png">
 
 **Graph**
-![](/assets/images/nosqlgraph1.png)
+<img style="width: 50%" src="/assets/images/nosqlgraph1.png">
