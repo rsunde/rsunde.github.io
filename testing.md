@@ -1,6 +1,7 @@
-####TDD - Test Driven Development
+# Osammanhängande Information Om Testning Inom Programmering
+## TDD - Test Driven Development
 
-#####Varför är TDD bra?
+### Varför är TDD bra?
 
 Vad är det för skillnad mellan TDD och unit tests?
 
@@ -38,7 +39,7 @@ Att hitta buggar gör man genom att använda slutprodukten.
 
 Som du kan se i test method ovan så är test methods namn väldigt beskrivande vilket underlättar underhåll. 
 
-#####TDD Nivåer
+###TDD Nivåer
 
 **Nivå 1:**
 Här testas enbart methods i en class, t.ex du har en class Calculator med en Add() method
@@ -60,10 +61,10 @@ Nu börjar det bli lite klurigt, vi behåller funktionaliteten från nivå 2, me
 Nu är det riktigt skumt, Vi behåller funktionaliteten från nivå 2, plus vi vill spara till en databas. Nivå 2 + Nivå 3.
 
 
-#####Mocking
+### Mocking
 Lämnad tom för jag har ingen lust =)
 
-#####Test Ramverk
+### Test Ramverk
 
 Vilka ramverk som finns och vad dem är bra eller dåliga på.
 
