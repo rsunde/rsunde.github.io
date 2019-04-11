@@ -98,12 +98,12 @@
 }
 
 .highlight .kt {
-    color: #445588;
+    color: #0000ff;
     font-weight: bold
 }
 
 .highlight .k,.highlight .kv {
-    color: #000000;
+    color: #0000ff;
     font-weight: bold
 }
 
@@ -176,11 +176,11 @@
 }
 
 .highlight .s {
-    color: #d14
+    color: #a31515
 }
 
 .highlight .n {
-    color: #008080
+    color: #000000
 }
 
 .highlight .na {
@@ -196,7 +196,7 @@
 }
 
 .highlight .nc {
-    color: #445588;
+    color: #2b91af;
     font-weight: bold
 }
 
@@ -219,7 +219,7 @@
 }
 
 .highlight .nf {
-    color: #990000;
+    color: #000000;
     font-weight: bold
 }
 
@@ -229,7 +229,7 @@
 }
 
 .highlight .nn {
-    color: #555555
+    color: #000000
 }
 
 .highlight .nt {
