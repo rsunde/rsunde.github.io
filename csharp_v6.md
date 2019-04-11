@@ -6,16 +6,16 @@ Här är ett exempel på hur man enklare kan fördefiniera värden.
 ```csharp
 public class Kund
 {
-    public string FörnamnV6 { get; set; } = "Gunnar";
+    public string FornamnV6 { get; set; } = "Gunnar";
     public string EfternamnV6 { get; } = "Gren";
     public string NamnV6 { get; }
 
-    public string Förnamn { get; set; }
+    public string Fornamn { get; set; }
     public string Efternamn { get; private set; }
 
     public Kund()
     {
-        NamnV6 = FörnamnV6 + " " + EfternamnV6;
+        NamnV6 = FornamnV6 + " " + EfternamnV6;
 
         Förnamn = "Gunnar";
         Efternamn = "Gren";
@@ -31,26 +31,26 @@ Nu kan man sätta en FAT ARROW på properties eller methods
 ```csharp
 public class Kund
 {
-    public string FörnamnV6 { get; set; } = "Gunnar";
+    public string FornamnV6 { get; set; } = "Gunnar";
     public string EfternamnV6 { get; } = "Gren";
 
     // Fat Arrows
-    public string NamnV6 => FörnamnV6 + " " + EfternamnV6;
-    public void PrintNamnV6() => Console.WriteLine(FörnamnV6 + " " + EfternamnV6);
+    public string NamnV6 => FornamnV6 + " " + EfternamnV6;
+    public void PrintNamnV6() => Console.WriteLine(FornamnV6 + " " + EfternamnV6);
     
     
-    public string Förnamn { get; set; }
+    public string Fornamn { get; set; }
     public string Efternamn { get; private set; }
 
     // Gammal Uschj!!
     public string Namn()
     {
-        return Förnamn + " " + Efternamn;
+        return Fornamn + " " + Efternamn;
     }
     
     public void PrintNamn()
     {
-        Console.WriteLine(Förnamn + " " + Efternamn);
+        Console.WriteLine(Fornamn + " " + Efternamn);
     }
 }
 ```
@@ -93,25 +93,25 @@ int _ordrar = kunder?.Ordrar?.Count() ?? 0;
 ##### string Interpolation $
 man brukar ju använda string.Format() för att formatera text och kunna placera variabler mitt i texten enkelt, men nu kan man i stället använda $ (nej pengar är inte lösningen) men nedan kan du se olika lösningar för att skriva ut formaterad text, gammalt med nytt, t.ex:
 ```csharp
-string Förnamn = "Gunnar";
+string Fornamn = "Gunnar";
 string Efternamn = "Gren";
 
 // Välkommen till matchen Gunnar Gren!
-Console.WriteLine($"Välkommen till matchen {Förnamn} {Efternamn}!");
-Console.WriteLine(string.Format("Välkommen till matchen {0} {1}!", Förnamn, Efternamn));
-Console.WriteLine("Välkommen till matchen " + Förnamn + " " + Efternamn + "!");
+Console.WriteLine($"Välkommen till matchen {Fornamn} {Efternamn}!");
+Console.WriteLine(string.Format("Välkommen till matchen {0} {1}!", Fornamn, Efternamn));
+Console.WriteLine("Välkommen till matchen " + Fornamn + " " + Efternamn + "!");
 
 Console.WriteLine($"Ett plus ett = {1+1}"); // Ett plus ett = 2
 ```
 
 Sen kan man tillochmed lägga in lite kod i {} hålet
 ```csharp
-Förnamn = "Gunnar";
+Fornamn = "Gunnar";
 Efternamn = "Gren";
 
 bool dag = false;
 
-Console.WriteLine($"God {(dag ? "dag" : "kväll")} {Förnamn}."); // God kväll Gunnar.
+Console.WriteLine($"God {(dag ? "dag" : "kväll")} {Fornamn}."); // God kväll Gunnar.
 ```
 
 ##### Exception filter
