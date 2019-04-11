@@ -26,16 +26,21 @@ Eller så kan du välja mellan 1 och 5 beroende på vad för data du vill spara 
 Hur ser då dessa olika databaser ut? *bilder stulna från [ThoughtWorks](https://www.thoughtworks.com/insights/blog/nosql-databases-overview)*
 
 **Relational**
+
 <img style="width: 50%" src="/assets/images/sqlrelational.png">
 
 **Document**
+
 <img style="width: 50%" src="/assets/images/nosqldocumentdb.png">
 
 **Key-Value**
+
 <img style="width: 50%" src="/assets/images/nosqlkeyvaluedatabase.png">
 
 **Wide-Column**
+
 <img style="width: 50%" src="/assets/images/nosqlcolumnfamily.png">
 
 **Graph**
+
 <img style="width: 50%" src="/assets/images/nosqlgraph1.png">
