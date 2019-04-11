@@ -10,7 +10,6 @@ unit tests är en del av TDD, men TDD är inte unit tests.
 **TDD** står för **T**est **D**riven **D**evelopment, vilket innebär att man skriver test kod innan man skriver själva koden.
 
 För att skriva en kalkulator som lägger ihop två nummer skriver vi först test kod som ser ut på följande sätt:
-<script src="https://gist.github.com/rsunde/1852da2f84572d47786c.js"></script>
 ```csharp
 [Test]
 public void CalculatorAddsTwoNumberPass()
@@ -34,6 +33,15 @@ Och det är det som TDD går ut på, skriv kontrakt först och sen uppfylla kont
 4. Refaktorisera koden tills andra testet blir grönt och förhoppningsvis är även första testet grönt =)
 
 <script src="https://gist.github.com/rsunde/8f750aa589ddd97d3bff.js"></script>
+```csharp
+public static class Calculator
+{
+    static public int Add(int x, int y)
+    {
+        return x + y;
+    }
+}
+```
 
 Vad gör du om du redan har massa kod som inte har några tester?
 
@@ -50,6 +58,13 @@ Som du kan se i test method ovan så är test methods namn väldigt beskrivande 
 **Nivå 1:**
 Här testas enbart methods i en class, t.ex du har en class Calculator med en Add() method
 <script src="https://gist.github.com/rsunde/1852da2f84572d47786c.js"></script>
+```csharp
+[Test]
+public void CalculatorAddsTwoNumberPass()
+{
+  NUnit.Framework.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
+}
+```
 
 Väldigt enkelt att förstå och skriva.
 
@@ -57,6 +72,25 @@ Väldigt enkelt att förstå och skriva.
 **Nivå 2:**
 Här testas ett object av en class, t.ex du har fortfarande din Calculator class, men varje gång du använt Add() så sparar du resultat i en intern array och du har lagt till en ny method som räknar storleken på din interna array.
 <script src="https://gist.github.com/rsunde/3dc9224946a78cab9812.js"></script>
+```csharp
+[Test]
+public void Calculator3AddOperationsThenCount()
+{
+  var calculator = new Calculator();
+ 
+  calculator.Add(1, 2);
+  calculator.Add(3, 4);
+  calculator.Add(5, 6);
+ 
+  var result = calculator.GetHistory();
+
+  NUnit.Framework.Assert.That(result[0], Is.EqualTo(3));
+  NUnit.Framework.Assert.That(result[1], Is.EqualTo(7));
+  NUnit.Framework.Assert.That(result[2], Is.EqualTo(11));
+  
+  NUnit.Framework.Assert.That(calculator.Count(), Is.EqualTo(3));
+}
+```
 
 Fortfarande enkelt att förstå och skriva, men test method är nästan större än koden i Calculator class.
 
@@ -84,10 +118,31 @@ Exempel:
 
 Class som skall testas
 <script src="https://gist.github.com/rsunde/8f750aa589ddd97d3bff.js"></script>
+```csharp
+public static class Calculator
+{
+    static public int Add(int x, int y)
+    {
+        return x + y;
+    }
+}
+```
 
 
 När man använder NUnit kan man skriva samma test på två olik sätt
 <script src="https://gist.github.com/rsunde/3f4db9421f558c7c6245.js"></script>
+```csharp
+[Test]
+public void CalculatorAddsTwoNumberPass()
+{
+  NUnit.Framework.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
+}
+[Test]
+public void CalculatorAddsTwoNumberPass()
+{
+  NUnit.Framework.Assert.AreEqual(4, Calculator.Add(2, 2));
+}
+```
 
 jag föredrar nog att skriva .That() som är det nya sättet istället för den klassiska stilen IsEqual().
 
