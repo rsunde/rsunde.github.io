@@ -32,7 +32,6 @@ Och det är det som TDD går ut på, skriv kontrakt först och sen uppfylla kont
 3. Skriv ett test till med ett annat testvärde
 4. Refaktorisera koden tills andra testet blir grönt och förhoppningsvis är även första testet grönt =)
 
-<script src="https://gist.github.com/rsunde/8f750aa589ddd97d3bff.js"></script>
 ```csharp
 public static class Calculator
 {
@@ -57,7 +56,6 @@ Som du kan se i test method ovan så är test methods namn väldigt beskrivande 
 
 **Nivå 1:**
 Här testas enbart methods i en class, t.ex du har en class Calculator med en Add() method
-<script src="https://gist.github.com/rsunde/1852da2f84572d47786c.js"></script>
 ```csharp
 [Test]
 public void CalculatorAddsTwoNumberPass()
@@ -71,7 +69,6 @@ Väldigt enkelt att förstå och skriva.
 
 **Nivå 2:**
 Här testas ett object av en class, t.ex du har fortfarande din Calculator class, men varje gång du använt Add() så sparar du resultat i en intern array och du har lagt till en ny method som räknar storleken på din interna array.
-<script src="https://gist.github.com/rsunde/3dc9224946a78cab9812.js"></script>
 ```csharp
 [Test]
 public void Calculator3AddOperationsThenCount()
@@ -117,7 +114,6 @@ från min forskning verkar det vara att nUnit och xUnit är bättre än MSTest, 
 Exempel:
 
 Class som skall testas
-<script src="https://gist.github.com/rsunde/8f750aa589ddd97d3bff.js"></script>
 ```csharp
 public static class Calculator
 {
@@ -130,7 +126,6 @@ public static class Calculator
 
 
 När man använder NUnit kan man skriva samma test på två olik sätt
-<script src="https://gist.github.com/rsunde/3f4db9421f558c7c6245.js"></script>
 ```csharp
 [Test]
 public void CalculatorAddsTwoNumberPass()
