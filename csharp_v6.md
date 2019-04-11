@@ -17,7 +17,7 @@ public class Kund
     {
         NamnV6 = FornamnV6 + " " + EfternamnV6;
 
-        Förnamn = "Gunnar";
+        Fornamn = "Gunnar";
         Efternamn = "Gren";
     }
 }
