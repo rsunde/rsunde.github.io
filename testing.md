@@ -11,7 +11,13 @@ unit tests är en del av TDD, men TDD är inte unit tests.
 
 För att skriva en kalkulator som lägger ihop två nummer skriver vi först test kod som ser ut på följande sätt:
 <script src="https://gist.github.com/rsunde/1852da2f84572d47786c.js"></script>
-
+```csharp
+[Test]
+public void CalculatorAddsTwoNumberPass()
+{
+  NUnit.Framework.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
+}
+```
 när du sen kör detta testet så kommer en hel del saker att hända;
 
 1. Calculator finns inte så vi måste skapa en class
