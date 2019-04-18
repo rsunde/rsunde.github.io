@@ -15,6 +15,8 @@ Själv är jag väldigt inlåst i Google världen och har gillat och uppskattat 
 
 Sen har du givetvis [FireFox](http://www.mozilla.org/en-US/firefox/new/).
 
+På mobilen kan du även använda [DuckDuckGo](https://duckduckgo.com/app) vilket ger dig mer säkerhet.
+
 ### Lösenord
 Installera [LastPass](https://www.lastpass.com/) eller liknande([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/)) och använd LastPass för att spara dina lösenord, dina kredit-korts uppgifter och andra saker, fördelen med detta är att du får tillgång till allt oberoende på vilken browser du använder, eller byter till. LastPass funkar även på [Android](https://play.google.com/store/apps/details?id=com.lastpass.lpandroid) och hjälper dig logga in i vanliga appar och med betalningar etc.
 
@@ -25,9 +27,6 @@ Cookies är ett nödvändigt ont på internet, cookies sparar in-loggnings uppgi
 
 ### Do Not Track
 Detta handlar om reklam, din browser skickar en request till hemsidan att du inte vill bli spårad, det är helt upp till hemsidan att bry sig.
-
-### Reklam / Ads
-Om du gillar reklam/ads skippa denna sektionen, annars installera en BRA Ad-blocker, jag rekommenderar [uBlock](https://github.com/gorhill/uBlock#ublock-origin), istallera till [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
 
 ### Payments Methods och Payment Info
 Varför skall en hemsida veta detta ? Du kör med LastPass ändå.
@@ -43,3 +42,18 @@ Alla inställningar bör vara *Ask First*.
 
 ### Javascript
 ALLA hemsidor idag nyttjar Javascript, om du verkligen vill stoppa all form av spårning och andra potentiella farliga saker bör du stänga av Javascript. Kommer bli lite jobbigt en stund men efter att du tillåtit Javascript på dina vanliga hemsidor så är du relativt säker när du besöker nya och okända hemsidor.
+
+## Browser Extensions
+Följande Extensions ger dig en mer säker och reklamfri upplevelse när du 
+
+### Sökmotor
+Googles motto "Do the right thing" påverkar dina sökresultat, därför rekommenderar jag att byta till [DuckDuckGo](https://duckduckgo.com) som varken spårar eller "gömmer" vissa resultat.
+
+### Reklam / Ads
+Installera en BRA Ad-blocker, jag rekommenderar [uBlock](https://github.com/gorhill/uBlock#ublock-origin), istallera till [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
+
+### Privacy
+DuckDuckGo har en egen extension som visar dig ett betyg på hur "säker" en hemsida är, [Chrome](https://chrome.google.com/webstore/detail/duckduckgo-privacy-essent/bkdgflcldnnnapblkhphbgpggdiikppg), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/)
+
+### Terms of Service
+[Terms ofService;Didn'r Read](https://tosdr.org/) är en hemsida för att hålla koll på hur hemsidors användarvilkor är skrivna och hur dem ändras. Installera för [Chrome](https://chrome.google.com/webstore/detail/hjdoplcnndgiblooccencgcggcoihigg), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read/)
