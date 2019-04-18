@@ -44,7 +44,7 @@ Alla inställningar bör vara *Ask First*.
 ALLA hemsidor idag nyttjar Javascript, om du verkligen vill stoppa all form av spårning och andra potentiella farliga saker bör du stänga av Javascript. Kommer bli lite jobbigt en stund men efter att du tillåtit Javascript på dina vanliga hemsidor så är du relativt säker när du besöker nya och okända hemsidor.
 
 ## Browser Extensions
-Följande Extensions ger dig en mer säker och reklamfri upplevelse när du 
+Följande Extensions ger dig en mer säker och reklamfri upplevelse när du snurrar runt på nätet.
 
 ### Sökmotor
 Googles motto "Do the right thing" påverkar dina sökresultat, därför rekommenderar jag att byta till [DuckDuckGo](https://duckduckgo.com) som varken spårar eller "gömmer" vissa resultat.
