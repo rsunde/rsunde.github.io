@@ -16,7 +16,7 @@ Själv är jag väldigt inlåst i Google världen och har gillat och uppskattat 
 Sen har du givetvis [FireFox](http://www.mozilla.org/en-US/firefox/new/).
 
 ### Lösenord
-Installera [LastPass](https://www.lastpass.com/) eller liknande([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/)) använd LastPass för att spara dina lösenord, dina kredit-korts uppgifter och andra saker, fördelen med detta är att du får tillgång till allt oberoende på vilken browser du använder, eller byter till.
+Installera [LastPass](https://www.lastpass.com/) eller liknande([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/)) och använd LastPass för att spara dina lösenord, dina kredit-korts uppgifter och andra saker, fördelen med detta är att du får tillgång till allt oberoende på vilken browser du använder, eller byter till. LastPass funkar även på [Android](https://play.google.com/store/apps/details?id=com.lastpass.lpandroid) och hjälper dig logga in i vanliga appar och med betalningar etc.
 
 ## Browser Inställningar
 
