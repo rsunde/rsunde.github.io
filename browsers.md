@@ -1,6 +1,6 @@
 # Web Browsers are evil =)
 
-Skyddar du dig mot privat insyn och tar du din säkerhet och på allvar när du surfar runt på nätet?
+Skyddar du dig mot privat insyn och tar du din säkerhet på allvar när du surfar runt på nätet?
 
 Googles motto "Don't be evil" byttes mot "Do the right thing", vilket kan tolkas lite hur du vill.
 
@@ -32,14 +32,14 @@ Om du gillar reklam/ads skippa denna sektionen, annars installera en BRA Ad-bloc
 ### Payments Methods och Payment Info
 Varför skall en hemsida veta detta ? Du kör med LastPass ändå.
 
-### Offer to Manager Passwords
+### Offer to Manage Passwords
 Nej, gör inte det, du använder LastPass istället.
 
 ### Save and fill Addresses
 Nej, gör inte det, du använder LastPass istället.
 
 ### Site Permissions
-Alla inställningar bör vara Ask First.
+Alla inställningar bör vara *Ask First*.
 
 ### Javascript
 ALLA hemsidor idag nyttjar Javascript, om du verkligen vill stoppa all form av spårning och andra potentiella farliga saker bör du stänga av Javascript. Kommer bli lite jobbigt en stund men efter att du tillåtit Javascript på dina vanliga hemsidor så är du relativt säker när du besöker nya och okända hemsidor.
