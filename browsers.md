@@ -53,10 +53,10 @@ Googles motto "Do the right thing" påverkar dina sökresultat, därför rekomme
 Installera en BRA Ad-blocker, jag rekommenderar [uBlock](https://github.com/gorhill/uBlock#ublock-origin), istallera till [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
 
 ### Privacy
-DuckDuckGo har en egen extension som visar dig ett betyg på hur "säker" en hemsida är, [Chrome](https://chrome.google.com/webstore/detail/duckduckgo-privacy-essent/bkdgflcldnnnapblkhphbgpggdiikppg), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/)
+DuckDuckGo har en egen extension som visar dig ett betyg på hur "säker" en hemsida är, [Chrome](https://chrome.google.com/webstore/detail/duckduckgo-privacy-essent/bkdgflcldnnnapblkhphbgpggdiikppg), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/).
 
 ### Terms of Service
-[Terms ofService;Didn'r Read](https://tosdr.org/) är en hemsida för att hålla koll på hur hemsidors användarvilkor är skrivna och hur dem ändras. Installera för [Chrome](https://chrome.google.com/webstore/detail/hjdoplcnndgiblooccencgcggcoihigg), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read/)
+[Terms ofService;Didn'r Read](https://tosdr.org/) är en hemsida för att hålla koll på hur hemsidors användarvilkor är skrivna och hur dem ändras. Installera för [Chrome](https://chrome.google.com/webstore/detail/hjdoplcnndgiblooccencgcggcoihigg), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/terms-of-service-didnt-read/).
 
 ### Enhancer for YouTube
-Enhancer for YouTube är en extension som förbättrar YouTube genom lite hacks, den tar även bort reklam, installera för [Chrome](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle), [FireFox](https://addons.mozilla.org/addon/enhancer-for-youtube/)
+Enhancer for YouTube är en extension som förbättrar YouTube genom lite hacks, den tar även bort reklam, installera för [Chrome](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle), [FireFox](https://addons.mozilla.org/addon/enhancer-for-youtube/).
