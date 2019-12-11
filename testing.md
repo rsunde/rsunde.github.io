@@ -124,22 +124,85 @@ public static class Calculator
 }
 ```
 
+### "Språk"-val
+De olika test ramverken använder olika "språk" för att beskriva saker i ramverket.
+
+Nedan kommer jag beskriva de olika sätten som man valt att skriva kod på, med andra ord, när man skriver kod så finns det ändå olika sätt att kalla en funktion, eller ett attribute, etc etc. och vad som känns rätt när man läser eller skriver koden tycker jag är viktigt, speciellt nu när det finns olika att välja mellan.. välj den som känns rätt.
+
+#### Attributes
+Man måste beskriva en class eller function med ett attribute för att testmotorn skall veta vad den skall testa.
+
+&nbsp;|xUnit|NUnit|MsTest
+-|-|-|-
+Class|&nbsp;|[TestFixture]|[TestClass]
+Function (nullary)|[Fact]|[Test]|[TestMethod]
+Function (n-ary)|[Theory]|&nbsp;|[DataTestMethod]
+Function data|[InlineData(n-ary)]|[TestCase(n-ary)]|[DataRow(n-ary)]
+
+https://en.wikipedia.org/wiki/Arity
+
+#### Asserts
+Assert.* är alla test ramverks utgångspunk, men även här skriver man på lite olika sätt;
+
+**xUnit**
+-
+
+**nUnit**
+-
+
+**MSTest**
+- AreEqual()
+- AreNotEqual()
+- AreSame()
+- AreNotSame()
+- IsXxxx()
+- IsNotXxxx()
+
 
 När man använder NUnit kan man skriva samma test på två olik sätt
 ```csharp
+
+// Constraint Model
 [Test]
 public void CalculatorAddsTwoNumberPass()
 {
-  NUnit.Framework.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
+  var somethingElse = 4;
+  var something = Calculator.Add(2, 2);
+  
+  NUnit.Framework.Assert.That(something, Is.EqualTo(somethingElse));
 }
+
+// Classic Model
 [Test]
 public void CalculatorAddsTwoNumberPass()
 {
-  NUnit.Framework.Assert.AreEqual(4, Calculator.Add(2, 2));
+  var expected = 4;
+  var result = Calculator.Add(2, 2);
+
+  NUnit.Framework.Assert.AreEqual(expected, result);
 }
 ```
 
 jag föredrar nog att skriva .That() som är det nya sättet istället för den klassiska stilen IsEqual().
+
+När man skriver ett test så brukar man dela upp testet i olika steg, man kan välja att kommentera fram sektionerna, men detta kan kännas onödigt när koden skall vara självbeskrivande, men nedan följer ett exemple på **The AAA (Arrange, Act, Assert) pattern**...
+
+```csharp
+
+// Constraint Model
+[Test]
+public void CalculatorAddsTwoNumberPass()
+{
+  // Arrange
+  var somethingElse = 4;
+  
+  // Act
+  var something = Calculator.Add(2, 2);
+  
+  // Assert
+  NUnit.Framework.Assert.That(something, Is.EqualTo(somethingElse));
+}
+```
 
 
 Och här är två tester med samma kod en för nUnit och en för xUnit
