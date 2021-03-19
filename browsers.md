@@ -44,13 +44,21 @@ ALLA hemsidor idag nyttjar Javascript, om du verkligen vill stoppa all form av s
 Följande Extensions ger dig en mer säker och reklamfri upplevelse när du snurrar runt på nätet.
 
 ### Lösenord
-Installera [LastPass](https://www.lastpass.com/) eller liknande([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/)) och använd LastPass för att spara dina lösenord, dina kredit-korts uppgifter och andra saker, fördelen med detta är att du får tillgång till allt oberoende på vilken browser du använder, eller byter till. LastPass funkar även på [Android](https://play.google.com/store/apps/details?id=com.lastpass.lpandroid) och hjälper dig logga in i vanliga appar och med betalningar etc.
+Installera ett Password Vault, lastpass var bäst (för mig) väldigt många år, men 2021 så gick dem och begränsade gratis versionen till en enhet, laptop eller mobil, så tänk på det när du väljer:
+
+[ZoHo Vault](https://www.zoho.com/vault/) ([Chrome](https://chrome.google.com/webstore/detail/zoho-vault/igkpcodhieompeloncfnbekccinhapdb), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/zoho-vault/), [Android](https://play.google.com/store/apps/details?id=com.zoho.vault)), bra gratis version.
+
+[LastPass](https://www.lastpass.com/) ([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/), [Android](https://play.google.com/store/apps/details?id=com.lastpass.lpandroid)), begränsad gratis version.
+
+[KeePass](https://keepass.info/) ([Chrome](https://chrome.google.com/webstore/search/keepass?_category=extensions), [FireFox](https://addons.mozilla.org/en-US/firefox/search/?q=keepass&type=extension), [Android](https://play.google.com/store/search?q=keepass&c=apps)), helt gratis och open source, men jag ogillar den.
+
+*Det är enkelt att exportera och importera dina lösenord mellan de olika platformarna.*
 
 ### Sökmotor
 Googles motto "Do the right thing" påverkar dina sökresultat, därför rekommenderar jag att byta till [DuckDuckGo](https://duckduckgo.com) som varken spårar eller "gömmer" vissa resultat.
 
 ### Reklam / Ads
-Installera en BRA Ad-blocker, jag rekommenderar [uBlock](https://github.com/gorhill/uBlock#ublock-origin), istallera till [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
+Installera en BRA Ad-blocker, jag rekommenderar [uBlock](https://github.com/gorhill/uBlock#ublock-origin), installera till [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
 
 ### Privacy
 DuckDuckGo har en egen extension som visar dig ett betyg på hur "säker" en hemsida är, [Chrome](https://chrome.google.com/webstore/detail/duckduckgo-privacy-essent/bkdgflcldnnnapblkhphbgpggdiikppg), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/).
