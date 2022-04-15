@@ -68,3 +68,10 @@ DuckDuckGo har en egen extension som visar dig ett betyg på hur "säker" en hem
 
 ### Enhancer for YouTube
 Enhancer for YouTube är en extension som förbättrar YouTube genom lite hacks, den tar även bort reklam, installera för [Chrome](https://chrome.google.com/webstore/detail/enhancer-for-youtube/ponfpcnoihfmfllpaingbgckeeldkhle), [FireFox](https://addons.mozilla.org/addon/enhancer-for-youtube/).
+
+### Bookmarks Sync
+xBrowserSync är inget säkerhetsverktyg, men det är smart att säkra upp dina bookmarks, installera för [Chrome](https://chrome.google.com/webstore/detail/xbrowsersync/lcbjdhceifofjlpecfpeimnnphbcjgnc), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/xbs/).
+
+xBrowserSync är helt anonymt, du får ett unikt ID för dina bookmarks som du skyddar med ett eget lösenord, och med detta ID kan du sen ställa in varje dator och browser med samma bookmarks.
+
+ID: 6bf1e2d8f8ed42cd80dc9b3beeaf5113
