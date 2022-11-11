@@ -54,7 +54,7 @@ Som du kan se i test method ovan så är test methods namn väldigt beskrivande 
 
 ### TDD Nivåer
 
-**Nivå 1:**
+#### Nivå 1:
 Här testas enbart methods i en class, t.ex du har en class Calculator med en Add() method
 ```csharp
 [Test]
@@ -67,7 +67,7 @@ public void CalculatorAddsTwoNumberPass()
 Väldigt enkelt att förstå och skriva.
 
 
-**Nivå 2:**
+#### Nivå 2:
 Här testas ett object av en class, t.ex du har fortfarande din Calculator class, men varje gång du använt Add() så sparar du resultat i en intern array och du har lagt till en ny method som räknar storleken på din interna array.
 ```csharp
 [Test]
@@ -91,10 +91,10 @@ public void Calculator3AddOperationsThenCount()
 
 Fortfarande enkelt att förstå och skriva, men test method är nästan större än koden i Calculator class.
 
-**Nivå 3:**
+#### Nivå 3:
 Nu börjar det bli lite klurigt, vi behåller funktionaliteten från nivå 2, men instället för en intern array så sparar vi allt i en databas vilket innebär att vi har en dependency, denna dependency kan finnas på samma maskin, i samma project, och det kanske inte är speciellt svårt att använda den, men tänk om det är en extern webservice med inloggning och lösenord, detta kan vara väldigt långsamt, eller så kanske det inte funkar alls för din dator inte har tillgång till databasen eller internet.
 
-**Nivå 4:**
+#### Nivå 4:
 Nu är det riktigt skumt, Vi behåller funktionaliteten från nivå 2, plus vi vill spara till en databas. Nivå 2 + Nivå 3.
 
 
@@ -128,6 +128,8 @@ public static class Calculator
 De olika test ramverken använder olika "språk" för att beskriva saker i ramverket.
 
 Nedan kommer jag beskriva de olika sätten som man valt att skriva kod på, med andra ord, när man skriver kod så finns det ändå olika sätt att kalla en funktion, eller ett attribute, etc etc. och vad som känns rätt när man läser eller skriver koden tycker jag är viktigt, speciellt nu när det finns olika att välja mellan.. välj den som känns rätt.
+
+Att tillägga är att det även finns
 
 #### Attributes
 Man måste beskriva en class eller function med ett attribute för att testmotorn skall veta vad den skall testa.
