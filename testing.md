@@ -139,14 +139,42 @@ Att tillägga är att det även finns specifika Assertion ramverk.
 #### Attributes
 Man måste beskriva en class eller function med ett attribute för att testmotorn skall veta vad den skall testa.
 
-&nbsp;|xUnit|NUnit|MsTest
+&nbsp;|NUnit|MSTest|xUnit
 -|-|-|-
-Class|&nbsp;|[TestFixture]|[TestClass]
-Function (nullary)|[Fact]|[Test]|[TestMethod]
-Function (n-ary)|[Theory]|&nbsp;|[DataTestMethod]
-Function data|[InlineData(n-ary)]|[TestCase(n-ary)]|[DataRow(n-ary)]
+Class|[TestFixture]|[TestClass]|&nbsp;
+Function (nullary)|[Test]|[TestMethod]|[Fact]
+Function (n-ary)|&nbsp;|[DataTestMethod]|[Theory]
+Function data|[TestCase(n-ary)]|[DataRow(n-ary)]|[InlineData(n-ary)]
 
 https://en.wikipedia.org/wiki/Arity
+
+
+Det finns även olika sätt att förbereda och avsluta test, man kan nyttja olika nivåer
+
+&nbsp;|NUnit|MSTest|xUnit
+-|-|-|-
+Class|[OneTimeSetup]|[ClassInitialize]|IClassFixture<>
+Method|[Setup]|[TestInitialize]|ctor
+&nbsp;|NUnit|MSTest|xUnit
+Class|[OneTimeTearDown]|[ClassCleanup]|IClassFixture<>
+Method|[TearDown]|[TestCleanup]|IDisposable.Dispose
+
+
+Ordning som de olika nivåerna körs vid 2 olika enhetstester:
+
+&nbsp;|NUnit|MSTest|xUnit
+-|-|-|-
+1|OneTimeSetup|ClassInitialize|IClassFixture.ctor
+2|Setup|TestSetup|ctor
+3|Test1()|Test1()|Test1()
+4|TearDown|TestCleanup|Dispose()
+5|Setup|TestInitialize|ctor
+6|Test2()|Test2()|Test2()
+7|TearDown|TestCleanup|Dispose()
+8|OneTimeTearDown|ClassCleanup|IClassFixture.Dispose()
+
+Väldigt likt varandra, men xUnit kör en mer programspråk inriktad syntax över att använda attribut.
+
 
 #### Asserts
 Assert.* är alla test ramverks utgångspunk, men även här skriver man på lite olika sätt, nedan visas alla assert varianter samtidigt (detta gör man inte i verkligheten), FluentAssertions och Shouldly beskrivs i Assertion sektionen nedan;
