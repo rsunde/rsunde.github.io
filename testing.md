@@ -7,6 +7,17 @@ Vad är det för skillnad mellan TDD och unit tests?
 
 unit tests är en del av TDD, men TDD är inte unit tests.
 
+Alla test exempel nedan har följande using(s):
+
+```csharp
+using MSTEST = Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUNIT = NUnit.Framework;
+using XUNIT = Xunit;
+using FluentAssertions;
+using Shouldly;
+```
+
+
 **TDD** står för **T**est **D**riven **D**evelopment, vilket innebär att man skriver test kod innan man skriver själva koden.
 
 För att skriva en kalkulator som lägger ihop två nummer skriver vi först test kod som ser ut på följande sätt:
@@ -14,16 +25,16 @@ För att skriva en kalkulator som lägger ihop två nummer skriver vi först tes
 [Test]
 public void CalculatorAddsTwoNumberPass()
 {
-  NUnit.Framework.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
+  NUNIT.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
 }
 ```
 när du sen kör detta testet så kommer en hel del saker att hända;
 
 1. Calculator finns inte så vi måste skapa en class
-2. Add() måste sen också skapas
-3. Nu kan du äntligen kompilera men testen är röd, så du börjar skriva sjävla koden i Add() method så ditt test blir grönt.
+2. Add() metoden måste sen också skapas
+3. Nu kan du äntligen kompilera men testet är rött, så du börjar skriva sjävla koden i Add() metoden så ditt test blir grönt.
 
-Och det är det som TDD går ut på, skriv kontrakt först och sen uppfylla kontraktet, liknande när du skriver interfaces.
+Och det är det som TDD går ut på, skriv kontrakt först och sen uppfyll kontraktet.
 
 **Sammanfattning =)**
 
@@ -60,7 +71,7 @@ Här testas enbart methods i en class, t.ex du har en class Calculator med en Ad
 [Test]
 public void CalculatorAddsTwoNumberPass()
 {
-  NUnit.Framework.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
+  NUNIT.Assert.That(Calculator.Add(2, 2), Is.EqualTo(4));
 }
 ```
 
@@ -81,11 +92,11 @@ public void Calculator3AddOperationsThenCount()
  
   var result = calculator.GetHistory();
 
-  NUnit.Framework.Assert.That(result[0], Is.EqualTo(3));
-  NUnit.Framework.Assert.That(result[1], Is.EqualTo(7));
-  NUnit.Framework.Assert.That(result[2], Is.EqualTo(11));
+  NUNIT.Assert.That(result[0], Is.EqualTo(3));
+  NUNIT.Assert.That(result[1], Is.EqualTo(7));
+  NUNIT.Assert.That(result[2], Is.EqualTo(11));
   
-  NUnit.Framework.Assert.That(calculator.Count(), Is.EqualTo(3));
+  NUNIT.Assert.That(calculator.Count(), Is.EqualTo(3));
 }
 ```
 
@@ -97,10 +108,6 @@ Nu börjar det bli lite klurigt, vi behåller funktionaliteten från nivå 2, me
 #### Nivå 4:
 Nu är det riktigt skumt, Vi behåller funktionaliteten från nivå 2, plus vi vill spara till en databas. Nivå 2 + Nivå 3.
 
-
-### Mocking
-Lämnad tom för jag har ingen lust =)
-
 ### Test Ramverk
 
 Vilka ramverk som finns och vad dem är bra eller dåliga på.
@@ -108,8 +115,6 @@ Vilka ramverk som finns och vad dem är bra eller dåliga på.
 1. nUnit
 2. xUnit
 3. MSTest
-
-från min forskning verkar det vara att nUnit och xUnit är bättre än MSTest, så jag beslutade mig för att koncentrera mig på nUnit och xUnit då dem är väldigt lika, får återkomma till MSTest en annan vacker dag.
 
 Exempel:
 
@@ -129,7 +134,7 @@ De olika test ramverken använder olika "språk" för att beskriva saker i ramve
 
 Nedan kommer jag beskriva de olika sätten som man valt att skriva kod på, med andra ord, när man skriver kod så finns det ändå olika sätt att kalla en funktion, eller ett attribute, etc etc. och vad som känns rätt när man läser eller skriver koden tycker jag är viktigt, speciellt nu när det finns olika att välja mellan.. välj den som känns rätt.
 
-Att tillägga är att det även finns
+Att tillägga är att det även finns specifika Assertion ramverk.
 
 #### Attributes
 Man måste beskriva en class eller function med ett attribute för att testmotorn skall veta vad den skall testa.
@@ -144,48 +149,24 @@ Function data|[InlineData(n-ary)]|[TestCase(n-ary)]|[DataRow(n-ary)]
 https://en.wikipedia.org/wiki/Arity
 
 #### Asserts
-Assert.* är alla test ramverks utgångspunk, men även här skriver man på lite olika sätt;
+Assert.* är alla test ramverks utgångspunk, men även här skriver man på lite olika sätt, nedan visas alla assert varianter samtidigt (detta gör man inte i verkligheten), FluentAssertions och Shouldly beskrivs i Assertion sektionen nedan;
 
-**xUnit**
--
-
-**nUnit**
--
-
-**MSTest**
-- AreEqual()
-- AreNotEqual()
-- AreSame()
-- AreNotSame()
-- IsXxxx()
-- IsNotXxxx()
-
-
-När man använder NUnit kan man skriva samma test på två olik sätt
 ```csharp
+int expected = 0;
+int actual = 4;
 
-// Constraint Model
-[Test]
-public void CalculatorAddsTwoNumberPass()
-{
-  var somethingElse = 4;
-  var something = Calculator.Add(2, 2);
-  
-  NUnit.Framework.Assert.That(something, Is.EqualTo(somethingElse));
-}
+// NUnit have multiple assert metods, classic and fluent.
+NUNIT.Assert.AreEqual(expected, actual);
+NUNIT.Assert.That(actual, Is.EqualTo(expected));
+        
+MSTEST.Assert.AreEqual(expected, actual);
+        
+XUNIT.Assert.Equal(expected, actual);
 
-// Classic Model
-[Test]
-public void CalculatorAddsTwoNumberPass()
-{
-  var expected = 4;
-  var result = Calculator.Add(2, 2);
+actual.Should().Be(expected); // FluentAssertions
 
-  NUnit.Framework.Assert.AreEqual(expected, result);
-}
+actual.ShouldBe(expected); // Shouldly
 ```
-
-jag föredrar nog att skriva .That() som är det nya sättet istället för den klassiska stilen IsEqual().
 
 När man skriver ett test så brukar man dela upp testet i olika steg, man kan välja att kommentera fram sektionerna, men detta kan kännas onödigt när koden skall vara självbeskrivande, men nedan följer ett exemple på **The AAA (Arrange, Act, Assert) pattern**...
 
@@ -202,15 +183,117 @@ public void CalculatorAddsTwoNumberPass()
   var something = Calculator.Add(2, 2);
   
   // Assert
-  NUnit.Framework.Assert.That(something, Is.EqualTo(somethingElse));
+  NUNIT.Assert.That(something, Is.EqualTo(somethingElse));
 }
 ```
 
+### Assertion
 
-Och här är två tester med samma kod en för nUnit och en för xUnit
+Som beskrivs tidigare så har olika test ramverk olika sätt att skriva sina Assertions.
+
+För att förenkla detta så finns det är även olika Assertion ramverk, och då försvinner anledningen till att välja ett specifikt test ramverk.
 
 
-här är även samma test kod för nUnit fast skrivet på det klassiska sättet
+#### Assertion Ramverk
+
+1. FluentAssertions
+2. Shouldly
+
+Exampel:
+
+FluentAssertions:
+
+```csharp
+string actual = "ABCDEFGHI";
+
+actual.Should()
+  .StartWith("AB")
+  .And.EndWith("HI")
+  .And.Contain("EF")
+  .And.HaveLength(9);
+
+// or
+
+actual.Should().StartWith("AB");
+actual.Should().EndWith("HI");
+actual.Should().Contain("EF");
+actual.Should().HaveLength(9);  
+```
+
+Shouldly:
+
+```csharp
+string actual = "ABCDEFGHI";
+actual.ShouldStartWith("AB");
+actual.ShouldEndWith("HI");
+actual.ShouldContain("EF");
+actual.Length.ShouldBe(9);
+```
+
+båda ramverken har Match funktioner och väldigt liknande bas funktionalitet, men FluentAssertions har mer specifika Assert möjligheter och ser ut att vara mognare.
 
 
-notera även att i xUnit är .Are borttaget så .AreEqual() blir .Equal()
+### Mocking
+Mocking innebär att man lurar koden genom att skapa låtsas object som reagerar på olika saker och svarar på olika sätt, t.ex vill du inte att ditt test springer ut på internet och pratar med en extern tjänst, t.ex väder, så du "mockar" din egen väderservice i testkoden att ge dig ett svar du kan testa.
+
+#### Mocking Ramverk
+
+Finns ett gäng populära ramverk;
+
+1. FakeItEasy
+2. Moq
+3. NSubstitute
+
+Jag gillar ramverk som behåller någon slags C# känsla
+
+Exempel:
+
+FakeItEasy:
+
+```csharp
+// Creating a fake object is just dead easy!
+// No mocks, no stubs, everything's a fake!
+var lollipop = A.Fake<ICandy>();
+var shop = A.Fake<ICandyShop>();
+
+// Easily set up a call to return a value
+A.CallTo(() => shop.GetTopSellingCandy()).Returns(lollipop);
+
+// Use your fake as you would an instance of the faked type.
+var developer = new SweetTooth();
+developer.BuyTastiestCandy(shop);
+
+// Asserting uses the same syntax as configuring calls.
+// There's no need to learn another syntax.
+A.CallTo(() => shop.BuyCandy(lollipop)).MustHaveHappened();
+```
+
+Moq:
+
+```csharp
+var mock = new Mock<IFoo>();
+mock.Setup(foo => foo.DoSomething("ping")).Returns(true);
+
+// access invocation arguments when returning a value
+mock.Setup(x => x.DoSomethingStringy(It.IsAny<string>()))
+		.Returns((string s) => s.ToLower());
+
+// lazy evaluating return value
+mock.Setup(foo => foo.GetCount()).Returns(() => 1);
+```
+
+NSubstitute:
+```csharp
+//Create:
+var calculator = Substitute.For<ICalculator>();
+
+//Set a return value:
+calculator.Add(1, 2).Returns(3);
+Assert.AreEqual(3, calculator.Add(1, 2));
+
+//Check received calls:
+calculator.Received().Add(1, Arg.Any<int>());
+calculator.DidNotReceive().Add(2, 2);
+```
+
+... och det är NSubstitute som vinner.
