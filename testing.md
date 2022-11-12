@@ -252,6 +252,7 @@ Shouldly:
 
 ```csharp
 string actual = "ABCDEFGHI";
+
 actual.ShouldStartWith("AB");
 actual.ShouldEndWith("HI");
 actual.ShouldContain("EF");
