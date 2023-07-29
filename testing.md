@@ -112,22 +112,9 @@ Nu är det riktigt skumt, Vi behåller funktionaliteten från nivå 2, plus vi v
 
 Vilka ramverk som finns och vad dem är bra eller dåliga på.
 
-1. nUnit
-2. xUnit
-3. MSTest
-
-Exempel:
-
-Class som skall testas
-```csharp
-public static class Calculator
-{
-    static public int Add(int x, int y)
-    {
-        return x + y;
-    }
-}
-```
+1. [nUnit](https://nunit.org/) ([MS Docs](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit))
+2. [xUnit](https://xunit.net/) ([MS Docs](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-dotnet-test))
+3. [MSTest](https://github.com/microsoft/testfx) ([MS Docs](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest))
 
 ### "Språk"-val
 De olika test ramverken använder olika "språk" för att beskriva saker i ramverket.
@@ -146,8 +133,9 @@ Function (nullary)|[Test]|[TestMethod]|[Fact]
 Function (n-ary)|&nbsp;|[DataTestMethod]|[Theory]
 Function data|[TestCase(n-ary)]|[DataRow(n-ary)]|[InlineData(n-ary)]
 
-https://en.wikipedia.org/wiki/Arity
+[https://en.wikipedia.org/wiki/Arity](https://en.wikipedia.org/wiki/Arity)
 
+---
 
 Det finns även olika sätt att förbereda och avsluta test, man kan nyttja olika nivåer
 
@@ -155,22 +143,26 @@ Det finns även olika sätt att förbereda och avsluta test, man kan nyttja olik
 -|-|-|-
 Class|[OneTimeSetup]|[ClassInitialize]|IClassFixture<>
 Method|[Setup]|[TestInitialize]|ctor
-&nbsp;|NUnit|MSTest|xUnit
+|||
 Class|[OneTimeTearDown]|[ClassCleanup]|IClassFixture<>
 Method|[TearDown]|[TestCleanup]|IDisposable.Dispose
 
+---
 
-Ordning som de olika nivåerna körs vid 2 olika enhetstester:
+Ordning som de olika nivåerna körs vid TVÅ olika enhetstester:
 
 &nbsp;|NUnit|MSTest|xUnit
 -|-|-|-
 1|OneTimeSetup|ClassInitialize|IClassFixture.ctor
+|||
 2|Setup|TestSetup|ctor
 3|Test1()|Test1()|Test1()
 4|TearDown|TestCleanup|Dispose()
+|||
 5|Setup|TestInitialize|ctor
 6|Test2()|Test2()|Test2()
 7|TearDown|TestCleanup|Dispose()
+|||
 8|OneTimeTearDown|ClassCleanup|IClassFixture.Dispose()
 
 Väldigt likt varandra, men xUnit kör en mer programspråk inriktad syntax över att använda attribut.
@@ -224,8 +216,8 @@ För att förenkla detta så finns det är även olika Assertion ramverk, och d�
 
 #### Assertion Ramverk
 
-1. FluentAssertions
-2. Shouldly
+1. [FluentAssertions](https://fluentassertions.com/)
+2. [Shouldly](https://docs.shouldly.org/)
 
 Exampel:
 
@@ -269,9 +261,9 @@ Mocking innebär att man lurar koden genom att skapa låtsas object som reagerar
 
 Finns ett gäng populära ramverk;
 
-1. FakeItEasy
-2. Moq
-3. NSubstitute
+1. [FakeItEasy](https://fakeiteasy.github.io/)
+2. [Moq](https://moq.github.io/moq/)
+3. [NSubstitute](https://nsubstitute.github.io/)
 
 Jag gillar ramverk som behåller någon slags C# känsla
 
@@ -326,3 +318,11 @@ calculator.DidNotReceive().Add(2, 2);
 ```
 
 ... och det är NSubstitute som vinner.
+
+### TDD *Summa Summarum*
+
+Använd **xUnit** för du gillar C# syntax och skippa onödiga [attribute].
+
+Använd **FluentAssertions** för ramverket är mognare, koden kan skrivas "fluently".
+
+Använd **nSubstitute** för du gillar C# syntax och inget skumt "ramverk" special sätt att skriva kod.
