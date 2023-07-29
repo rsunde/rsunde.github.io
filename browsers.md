@@ -66,8 +66,15 @@ Helt gratis och open source *offline* Password Vault, men man måste sköta hant
 *Det är enkelt att exportera och importera dina lösenord mellan de olika platformarna.*
 
 ### Sökmotor
-Googles motto "Do the right thing" påverkar dina sökresultat, därför rekommenderar jag att byta till [Brave](https://search.brave.com/) som varken spårar eller "gömmer" vissa resultat.
-, [DuckDuckGo](https://duckduckgo.com) brukade vara som Brave, men har bevisligen gått o blivit mer "begränsad", [Qwant](https://www.qwant.com/) "The search engine that doesn't know anything about you", [SearXNG](https://searx.space/) "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.".
+Googles motto "Do the right thing" påverkar dina sökresultat, därför rekommenderar jag att byta till;
+
+[Brave](https://search.brave.com/) som varken spårar eller "gömmer" vissa resultat,
+
+[DuckDuckGo](https://duckduckgo.com) brukade vara som Brave, men har bevisligen gått o blivit mer "begränsad",
+
+[Qwant](https://www.qwant.com/) "The search engine that doesn't know anything about you",
+
+[SearXNG](https://searx.space/) "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.".
 
 ### Reklam / Ads
 Installera en BRA Ad-blocker, jag rekommenderar [uBlock](https://github.com/gorhill/uBlock#ublock-origin), installera till [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
