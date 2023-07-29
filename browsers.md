@@ -46,16 +46,28 @@ Följande Extensions ger dig en mer säker och reklamfri upplevelse när du snur
 ### Lösenord
 Installera ett Password Vault, lastpass var bäst (för mig) väldigt många år, men 2021 så gick dem och begränsade gratis versionen till en enhet, laptop eller mobil, så tänk på det när du väljer:
 
+#### Allmänt
+
 [ZoHo Vault](https://www.zoho.com/vault/) ([Chrome](https://chrome.google.com/webstore/detail/zoho-vault/igkpcodhieompeloncfnbekccinhapdb), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/zoho-vault/), [Android](https://play.google.com/store/apps/details?id=com.zoho.vault)), bra gratis version.
 
 [LastPass](https://www.lastpass.com/) ([Chrome](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd), [FireFox](https://addons.mozilla.org/en-US/firefox/addon/lastpass-password-manager/), [Android](https://play.google.com/store/apps/details?id=com.lastpass.lpandroid)), begränsad gratis version.
 
-[KeePass](https://keepass.info/) ([Chrome](https://chrome.google.com/webstore/search/keepass?_category=extensions), [FireFox](https://addons.mozilla.org/en-US/firefox/search/?q=keepass&type=extension), [Android](https://play.google.com/store/search?q=keepass&c=apps)), helt gratis och open source, men jag ogillar den.
+[Microsoft Autofill](https://support.microsoft.com/en-us/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a) ([Chrome](https://chrome.google.com/webstore/detail/microsoft-autofill/fiedbfgcleddlbcmgdigjgdfcggjcion), Edge ingår i browser, Firefox saknas, [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator)), om Microsoft Authenticator redan sköter dina multi factor logins (mfa/2fa), så varför inte kombinera med lösenord också.
+
+[NordPass](https://nordpass.com/personal-password-manager/) ([Chrome](https://chrome.google.com/webstore/detail/nordpass%C2%AE-password-manage/fooolghllnmhmmndgjiamiiodkpenpbb), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/nordpass-password-manager/), [Android](https://play.google.com/store/apps/details?id=com.nordpass.android.app.password.manager)), du kanske redan använder NordVPN och gillar Nord appar, annars ett trevligt alternativ till de andra.
+
+#### KeePass familjen
+Helt gratis och open source *offline* Password Vault, men man måste sköta hanteringen av sin lösenordsfil själv, kopiera eller synca till olika enheter för användning.
+
+[KeePass](https://keepass.info/) ([Chrome](https://chrome.google.com/webstore/search/keepass?_category=extensions), [FireFox](https://addons.mozilla.org/en-US/firefox/search/?q=keepass&type=extension), [Android](https://play.google.com/store/search?q=keepass&c=apps)), enbart för Windows.
+
+[KeePassXC](https://keepassxc.org/) ([Chrome](https://chrome.google.com/webstore/search/keepassxc?_category=extensions), [FireFox](https://addons.mozilla.org/en-US/firefox/search/?q=keepassxc&type=extension), [Android](https://play.google.com/store/search?q=keepass&c=apps)), för Windows, osX och Linux. *KeePassXC verkar vara mer aktiv i utvecklingen än KeePass.*
 
 *Det är enkelt att exportera och importera dina lösenord mellan de olika platformarna.*
 
 ### Sökmotor
-Googles motto "Do the right thing" påverkar dina sökresultat, därför rekommenderar jag att byta till [DuckDuckGo](https://duckduckgo.com) som varken spårar eller "gömmer" vissa resultat.
+Googles motto "Do the right thing" påverkar dina sökresultat, därför rekommenderar jag att byta till [Brave](https://search.brave.com/) som varken spårar eller "gömmer" vissa resultat.
+, [DuckDuckGo](https://duckduckgo.com) brukade vara som Brave, men har bevisligen gått o blivit mer "begränsad", [Qwant](https://www.qwant.com/) "The search engine that doesn't know anything about you", [SearXNG](https://searx.space/) "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.".
 
 ### Reklam / Ads
 Installera en BRA Ad-blocker, jag rekommenderar [uBlock](https://github.com/gorhill/uBlock#ublock-origin), installera till [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm), [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
