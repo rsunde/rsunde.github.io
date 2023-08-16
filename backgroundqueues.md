@@ -1,8 +1,8 @@
 # Background / Queue
 
-A brief comparison and understanding of different background job and queue managers.
-
 ## Introduction
+
+A brief comparison and understanding of different background job and queue managers.
 
 ### Hangfire
 Hangfire provides a job queue, the jobs gets stored in a database or in memory, the jobs are stored with an action or task name and its arguments, these jobs then gets executed right away (background job) or later (scheduled job), all these jobs can run any where you want, locally in the main app or in the cloud as different services consume the jobs.
