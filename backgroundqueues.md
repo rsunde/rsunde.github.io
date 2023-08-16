@@ -25,7 +25,7 @@ public static Task<Config> Test(Config config)
 var jobid = Hangfire.BackgroundJob.Enqueue(() => Test(new Config()));
 ```
 
-As you can see, the Test task takes a config as argument and then returns a config, maybe in this instance we needed to do something with the config which takes 1 hour, so send the task off to a service somewhere and let it work.
+As you can see, the Test task takes a config as parameter and then returns a config, maybe in this instance we needed to do something with the config which takes 1 hour, so send the task off to a service somewhere and let it work.
 
 As you can see the task returns the config but adding the job to hangfire only returns the jobid, so there is no way to actually deal with the result.
 
@@ -43,6 +43,10 @@ var jobid = Hangfire.BackgroundJob.Enqueue(() => Test(new Config()));
 ```
 
 This is suppsedly the only way to return data, unless you poll the database or another service for some kind of change.
+
+#### Conclusion
+Good for fire and forget stuff, the parameters that goes into the task cant just be stored in the database without serializing, which can cause all kinds of issues, imagine very complex parameters.
+
 
 ### Brighter
 
