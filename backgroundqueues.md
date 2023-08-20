@@ -4,7 +4,19 @@
 
 A brief comparison and understanding of different background job and queue managers.
 
+## Contents
+<!-- TOC tocDepth:2..6 chapterDepth:99..99 anchorMode:vscode -->
+
+- [Introduction](#introduction)
+- [Contents](#contents)
+    - [Hangfire](#hangfire)
+        - [1. Conclusion](#1-conclusion)
+    - [Brighter](#brighter)
+
+<!-- /TOC -->
+
 ### Hangfire
+
 Hangfire provides a job queue, the jobs gets stored in a database or in memory, the jobs are stored with an action or task name and its arguments, these jobs then gets executed right away (background job) or later (scheduled job), all these jobs can run any where you want, locally in the main app or in the cloud as different services consume the jobs.
 
 jobs can be chained by providing the "parent" jobid to another job.
@@ -12,6 +24,7 @@ jobs can be chained by providing the "parent" jobid to another job.
 the jobs are very isolated and doesnt return the result, if you need to provide the results of the job, you need to another way of doing this, SignalR for example from inside the job itself.
 
 *Example:*
+
 ```csharp
 public static Task<Config> Test(Config config)
 {
@@ -30,6 +43,7 @@ As you can see, the Test task takes a config as parameter and then returns a con
 As you can see the task returns the config but adding the job to hangfire only returns the jobid, so there is no way to actually deal with the result.
 
 *Example:*
+
 ```csharp
 public static void Test(Config config)
 {
@@ -44,10 +58,9 @@ var jobid = Hangfire.BackgroundJob.Enqueue(() => Test(new Config()));
 
 This is suppsedly the only way to return data, unless you poll the database or another service for some kind of change.
 
-#### Conclusion
+#### 1. Conclusion
+
 Good for fire and forget stuff, the parameters that goes into the task cant just be stored in the database without serializing, which can cause all kinds of issues, imagine very complex parameters.
 
-
-### Brighter
-
+### Brighter | Darker
 
