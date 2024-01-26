@@ -101,7 +101,7 @@ public void Calculator3AddOperationsThenCount()
   NUNIT.Assert.That(result[1], Is.EqualTo(7));
   NUNIT.Assert.That(result[2], Is.EqualTo(11));
   
-  NUNIT.Assert.That(calculator.Count(), Is.EqualTo(3));
+  NUNIT.Assert.That(result.Count(), Is.EqualTo(3));
 }
 ```
 
