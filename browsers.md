@@ -4,12 +4,14 @@ Skyddar du dig mot privat insyn och tar du din säkerhet på allvar när du surf
 
 Googles motto "Don't be evil" byttes mot "Do the right thing", vilket kan tolkas lite hur du vill.
 
+[The Incognito Mode Myth Has Fully Unraveled](https://www.wired.com/story/google-chrome-incognito-mode-data-deletion-settlement/)
+
 OM du gillar eller inte bryr dig om att din Browser eller alla hemsidor spårar allt du gör så kan du sluta läsa här och nu, annars följ lite tips och tricks nedan...
 
 ## Allmänt
 
 ### Browsers
-Själv är jag väldigt inlåst i Google världen och har gillat och uppskattat [Chrome](https://www.google.com/chrome/) sen start, Chrome är Googles skal som bygger på [Chromium](https://www.chromium.org/Home), Microsoft har nyligen bytt till att använda Googles Chromium i deras nya [Edge](https://www.microsoftedgeinsider.com) vilket inte är oväntat då Chromium är väldigt bra, Både Chrome och nya Edge påtvingar lite att du måste vara inloggad och syncad med deras tjänster, vilket har sina för och nackdelar. Jag rekommenderar därför ett par alternativ, [Brave](https://brave.com/), [Vivaldi](https://vivaldi.com/).
+Själv är jag väldigt inlåst i Google världen och har gillat och uppskattat [Chrome](https://www.google.com/chrome/) sen start, Chrome är Googles skal som bygger på [Chromium](https://www.chromium.org/Home), Microsoft bytte till att använda Googles Chromium i [Edge](https://www.microsoftedgeinsider.com) vilket inte är oväntat då Chromium är väldigt bra, Både Chrome och Edge påtvingar lite att du måste vara inloggad och syncad med deras tjänster, vilket har sina för och nackdelar. Jag rekommenderar därför ett par alternativ, [Brave](https://brave.com/), [Vivaldi](https://vivaldi.com/).
 
 [Chrome Extensions](https://chrome.google.com/webstore/category/extensions) funkar i alla Chromium browsers.
 
