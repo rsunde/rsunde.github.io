@@ -1,6 +1,7 @@
 # Välkommen in
 
 * [Background / Queues](/backgroundqueues)
+* [Operating Systems](operatingsystems)
 * [Browser Säkerhet](/browsers)
 * [Nyheter C# v8](/csharp_v8)
 * [Javascript Snippets](/javascript)
