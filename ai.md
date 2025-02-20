@@ -127,9 +127,29 @@ Fem populära tjänster (oftast kostar de pengar):
 - [Replicate](https://replicate.com) - Plattform för att köra AI-modeller i molnet.
 
 ### Lokalt
-Gratis alternativ:
-- [LM Studio](https://lmstudio.ai) - Enkel
-- [Ollama](https://ollama.ai) - Inte komplicerad, men inte lika enkel som LM Studio.
+Gratis alternativ för att köra AI-modeller lokalt:
+
+- [LM Studio](https://lmstudio.ai) 
+  - Användarvänligt GUI för modellhantering
+  - Inbyggd chat och API-server
+  - Windows, macOS, Linux
+
+- [Ollama](https://ollama.ai)
+  - Kommandoradsbaserad modellhantering
+  - REST API för integration
+  - macOS, Linux, Windows (WSL)
+
+- [GPT4All](https://gpt4all.io)
+  - Enkelhet i fokus
+  - Inbyggd modellnedladdning
+  - Cross-platform desktop app
+  - Windows, macOS, Linux
+
+- [LocalAI](https://localai.io)
+  - API-kompatibelt med OpenAI
+  - Containeriserad lösning
+  - Stöd för många modelltyper
+  - Docker-baserad installation
 
 ## Användning i Arbetssyfte
 
@@ -157,6 +177,31 @@ Gratis alternativ:
     - Claude 3.5 Sonnet (Preview)
   - [LLMCopilot2022](https://marketplace.visualstudio.com/items?itemName=foyoung365.LLMCopilot2022) Code using Ollama models
   - [EntwineLLM](https://marketplace.visualstudio.com/items?itemName=EmilianoMusso.EntwineLLM) LLM coding assistant (code writing and review, refactor, unit tests generation, documentation)
+- LM Studio
+  - Användarvänligt gränssnitt för att:
+    - Hitta och ladda ner modeller
+    - Chatta med modeller direkt i programmet
+    - Hantera flera modeller samtidigt
+  - Inkluderar serverkomponent som:
+    - Kör modeller separat från användargränssnittet
+    - Stödjer API-anrop från externa applikationer
+    - Kan köras headless för serverinstallationer
+
+- Ollama
+  - Fokuserad serverkomponent som:
+    - Erbjuder robust API för modellhantering
+    - Stödjer många olika modellformat
+    - Enkel kommandoradshantering
+  - Populära webb-baserade gränssnitt:
+    - [OpenWebUI](https://github.com/open-webui/open-webui)
+    - [Amica](https://github.com/semperai/amica)
+
+- LM Studio / Ollama - Serverintegration
+  - Gemensamma egenskaper:
+    - REST API på localhost (standard)
+    - Konfigurerbar port (LM Studio: 1234, Ollama: 11434)
+    - Kompatibla med de flesta IDE-plugins
+    - Stöd för olika modellformat (GGUF, GGML)
 
 #### **Copilot (GitHub Copilot)**
 GitHub Copilot är en **AI-assistent** som är djupt integrerad i kodeditorer som **Visual Studio Code** och **Visual Studio** och sätter ett tydligt exempel för hur en sådan integration bör fungera.  
