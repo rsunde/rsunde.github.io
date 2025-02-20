@@ -1,5 +1,6 @@
 # Välkommen in
 
+* [Artificial Intelligence](/ai)
 * [Background / Queues](/backgroundqueues)
 * [Operating Systems](operatingsystems)
 * [Browser Säkerhet](/browsers)
