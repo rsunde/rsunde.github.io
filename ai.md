@@ -1,9 +1,14 @@
 # AI - Artificiell Intelligens
 
+Artificiell intelligens (AI) handlar om att skapa system som kan efterlikna och förstärka mänskliga kognitiva processer. Detta dokument fokuserar på språkmodeller (LLMs) och hur du kan använda dem både online och lokalt.
+
 ## Innehållsförteckning
 - [AI - Artificiell Intelligens](#ai---artificiell-intelligens)
   - [Innehållsförteckning](#innehållsförteckning)
   - [Modeller](#modeller)
+    - [Grundläggande Koncept](#grundläggande-koncept)
+    - [Typer av Modeller](#typer-av-modeller)
+    - [Träningsprocess](#träningsprocess)
   - [Modellnamn](#modellnamn)
     - [Vad namnen betyder](#vad-namnen-betyder)
   - [Översikt för Modellstorlekar, Kvantisering och Utrymme](#översikt-för-modellstorlekar-kvantisering-och-utrymme)
@@ -14,8 +19,11 @@
     - [Liten Modell: 350M med Q4](#liten-modell-350m-med-q4)
     - [Medelmodell: 7B med Q8](#medelmodell-7b-med-q8)
     - [Stor Modell: 175B med FP32](#stor-modell-175b-med-fp32)
-    - [Jämför modeller](#jämför-modeller)
+    - [Jämför modeller online - rankings](#jämför-modeller-online---rankings)
     - [Basmodeller för Hemmasnickare](#basmodeller-för-hemmasnickare)
+      - [Populära Plattformar](#populära-plattformar)
+      - [Fördelar med Open Source Modeller](#fördelar-med-open-source-modeller)
+      - [Populära Startmodeller](#populära-startmodeller)
     - [Modeller (basmodeller)](#modeller-basmodeller)
     - [Ytterligare modeller och dess varianter](#ytterligare-modeller-och-dess-varianter)
   - [Användning - Online och Lokalt](#användning---online-och-lokalt)
@@ -23,16 +31,45 @@
     - [Lokalt](#lokalt)
   - [Användning i Arbetssyfte](#användning-i-arbetssyfte)
     - [Verktyg](#verktyg)
-      - [**Copilot (GitHub Copilot)**](#copilot-github-copilot)
-      - [**Andra AI Plugins i Kodeditorer**](#andra-ai-plugins-i-kodeditorer)
-      - [**Sammanfattning**](#sammanfattning)
-
-Artificiell intelligens (AI) handlar om att skapa system som kan efterlikna och förstärka mänskliga kognitiva processer, såsom problemlösning, inlärning och beslutsfattande.
+      - [Copilot (GitHub Copilot)](#copilot-github-copilot)
+      - [Andra AI Plugins i Kodeditorer](#andra-ai-plugins-i-kodeditorer)
+      - [Sammanfattning](#sammanfattning)
 
 ## Modeller
 
-Modeller är matematiska eller datorprogram som tränas på data för att upptäcka mönster.
-- Består av lager, noder och kopplingar.
+Modeller är hjärtat i moderna AI-system - de är matematiska eller datorbaserade strukturer som tränas på data för att upptäcka mönster och göra prediktioner. Tänk på dem som "hjärnor" som kan specialiseras för olika uppgifter:
+
+> **Tips**: När du väljer en modell, börja med att identifiera dina behov (textgenerering, kod, chat) och tillgängliga resurser (minne, processorkraft).
+
+### Grundläggande Koncept
+- **Arkitektur**: Hur modellen är uppbyggd internt
+  - Består av lager, noder och kopplingar
+  - Olika arkitekturer passar olika användningsområden
+  - Moderna modeller kan ha miljardtals parametrar
+
+### Typer av Modeller
+- **Generella Modeller**: 
+  - Kan hantera många olika uppgifter
+  - Kräver ofta mer resurser
+  - Exempel: GPT-familjen, BERT
+  
+- **Specialiserade Modeller**:
+  - Optimerade för specifika uppgifter
+  - Ofta mindre och effektivare
+  - Exempel: Kodmodeller, bildmodeller
+
+### Träningsprocess
+- **Förträning**: 
+  - Modellen lär sig grundläggande förståelse
+  - Tränas på stora mängder ostrukturerad data
+  
+- **Finjustering**:
+  - Anpassning för specifika uppgifter
+  - Använder mindre, specialiserad data
+  
+- **Utvärdering**:
+  - Tester mot standardiserade uppgifter
+  - Mätning av prestanda och kvalitet
 
 ## Modellnamn
 
@@ -51,6 +88,8 @@ Modellnamn ger information om arkitektur, version, storlek och kvantisering. Exe
 
 Dessa namn hjälper användaren att snabbt se modellens egenskaper och göra rätt val för sina behov.
 
+> **Observera**: Modellnamn kan verka komplexa men följer oftast ett logiskt mönster som hjälper dig förstå modellens kapacitet och resurskrav.
+
 ## Översikt för Modellstorlekar, Kvantisering och Utrymme
 
 ### Modellstorlekar
@@ -66,6 +105,8 @@ Dessa namn hjälper användaren att snabbt se modellens egenskaper och göra rä
 ### Disk och minneskrav
 Modellens filstorlek och minneskrav beror på vald parameterstorlek och kvantisering; hög precision och fler parametrar kräver mer utrymme.
 
+> **Viktigt**: Kvantisering är ett sätt att minska modellens storlek med viss precisionsförlust. Välj nivå baserat på dina behov av precision vs. resurskrav.
+
 ## Kombinationer – För- och Nackdelar
 
 ### Liten Modell: 350M med Q4
@@ -80,7 +121,9 @@ Modellens filstorlek och minneskrav beror på vald parameterstorlek och kvantise
 - **Fördelar:** Hög noggrannhet och kapacitet.
 - **Nackdelar:** Höga krav på minne och disk, och ofta långsammare.
 
-### Jämför modeller
+> **Praktiskt exempel**: En 7B-modell med Q8 kvantisering är ofta en bra startpunkt för lokala experiment, då den balanserar prestanda och resurskrav.
+
+### Jämför modeller online - rankings
 - [Artificial Analysis](https://artificialanalysis.ai) – Övergripande analys.
 - [Modellöversikt](https://artificialanalysis.ai/models) – Detaljerad modellinformation.
 - [YourGPT AI](https://yourgpt.ai/tools/llm-comparison-and-leaderboard) – Jämförelse och leaderboard.
@@ -88,11 +131,33 @@ Modellens filstorlek och minneskrav beror på vald parameterstorlek och kvantise
 - [LM Arena](https://lmarena.ai) – Arena för LLM-jämförelse.
 
 ### Basmodeller för Hemmasnickare
-Ollama Search ([Ollama](https://ollama.com/search)) listar ett brett utbud av öppna modeller – exempelvis Llama, Qwen, och Phi – som är populära bland hemmasnickare. Dessa modeller väljs som basmodeller eftersom:
-- De är helt öppna och fritt tillgängliga, vilket möjliggör experimentering och vidareutveckling.
-- De är flexibla och lätta att anpassa efter specifika behov.
-- De backas upp av en aktiv community med omfattande support och resurser.
-- De har ofta lägre resurskrav jämfört med kommersiella alternativ.
+Det finns flera platser där man kan hitta och experimentera med AI-modeller:
+
+#### Populära Plattformar
+- [**Ollama**](https://ollama.com/search): Enkelt gränssnitt för att köra modeller lokalt
+  - Snabb installation och användning
+  - Bred samling av optimerade modeller
+  - Perfekt för nybörjare och experiment
+
+- [**Hugging Face**](https://huggingface.co): Den största plattformen för AI-modeller
+  - Omfattande modelldatabas
+  - Detaljerad dokumentation
+  - Aktiv community och forskning
+  - Möjlighet att träna egna modeller
+
+#### Fördelar med Open Source Modeller
+- **Transparens**: Öppen källkod möjliggör granskning
+- **Anpassningsbarhet**: Kan modifieras för specifika behov
+- **Kostnadsfritt**: Inga licensavgifter
+- **Community-stöd**: Aktiv utveckling och förbättring
+- **Lokal körning**: Full kontroll över data och prestanda
+
+#### Populära Startmodeller
+- **För Textgenerering**: Llama, Mistral
+- **För Kodning**: StarCoder, CodeLlama
+- **För Översättning**: NLLB, M2M-100
+- **För Chatbot**: Vicuna, OpenHermes
+- **För Lätt Användning**: Phi-2, TinyLlama
 
 ### Modeller (basmodeller)
 - Llama (t.ex. Llama 3.x) – Populär för sin flexibilitet och stora community.
@@ -117,14 +182,17 @@ Ollama Search ([Ollama](https://ollama.com/search)) listar ett brett utbud av ö
 ## Användning - Online och Lokalt
 
 ### Online
-Fem populära tjänster (oftast kostar de pengar):
-- [ChatGPT](https://chat.openai.com)
-- [Microsoft CoPilot](https://copilot.cloud.microsoft/)
-- [Google Gemini](https://gemini.google.com/app)
-- [Anthropic Claude](https://claude.ai/)
-- [X Grok](https://grok.com/)
-- [Hugging Face](https://huggingface.co) - Öppen plattform för AI och maskininlärning.
-- [Replicate](https://replicate.com) - Plattform för att köra AI-modeller i molnet.
+Populära tjänster (Gratis med begränsningar):
+1. [ChatGPT](https://chat.openai.com) (Plus: $20/månad, Team: $30/användare/månad)
+1. [Microsoft CoPilot](https://copilot.cloud.microsoft/) (Pro: $30/månad)
+1. [Google Gemini](https://gemini.google.com/app) (Advanced: $10/månad)
+1. [Anthropic Claude](https://claude.ai/) (Pro: $20/månad)
+1. [X Grok](https://grok.com/) (Premium X: $16/månad)
+1. [Meta AI](https://meta.ai/llama) (Gratis)
+- [Hugging Face](https://huggingface.co) - Öppen plattform för AI och maskininlärning (Pro: från $9/månad).
+- [Replicate](https://replicate.com) - Plattform för att köra AI-modeller i molnet (Pay-per-use).
+
+> **Kom ihåg**: Online-tjänster är enklast att komma igång med, medan lokala installationer ger mer kontroll och integritet.
 
 ### Lokalt
 Gratis alternativ för att köra AI-modeller lokalt:
@@ -157,10 +225,18 @@ Gratis alternativ för att köra AI-modeller lokalt:
 - Analys och visualisering av stora datamängder.
 - Förbättrad beslutsfattande med hjälp av prediktiva modeller.
 
+> **Pro-tips för AI-användning**
+> 
+> För enklaste vägen in, börja med någon av onlinestjänsterna direkt i webbläsaren - det kräver minimal setup och ger snabba resultat, med det kräver mycket copy/paste. Om du behöver mer kontroll eller vill experimentera, testa lokala modeller via Ollama eller LM Studio.
+>
+> När du jobbar med källkod, använd gärna plugins direkt i din IDE. Kom ihåg att inkludera relevant kontext när du ställer frågor, och spara dina bästa prompts för återanvändning. För dokumentation, låt AI:n hjälpa till att expandera dina utkast men behåll din personliga stil.
+>
+> Det viktigaste är att börja enkelt och utöka användningen i din egen takt - AI är ett verktyg som ska underlätta ditt arbete, inte komplicera det.
+
 ### Verktyg
 
 - Visual Studio Code: Editor med stöd för AI, Copilot och olika plugins.
-  - [Copilot (2025 Mars)](https://copilot.cloud.microsoft/) erbjuder följande modeller:
+  - [Copilot](https://copilot.cloud.microsoft/) erbjuder följande modeller (2025 Mars):
     - Claude 3.5 Sonnet (Preview)
     - Gemini 2.0 Flash (Preview)
     - GPT 4o
@@ -170,7 +246,7 @@ Gratis alternativ för att köra AI-modeller lokalt:
   - [Ollama Script Code](https://marketplace.visualstudio.com/items?itemName=OllamaScriptCode.ollama-script-code) Ollama Script Code provides autocompletion and chat for code using the Ollama models.
   - [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue) The leading open-source AI code assistant
 - Visual Studio 2022: Editor med stöd för AI (Copilot).
-  - [Copilot (2025 Mars)](https://copilot.cloud.microsoft/) erbjuder följande modeller:
+  - [Copilot](https://copilot.cloud.microsoft/) erbjuder följande modeller (2025 Mars):
     - GPT 4o
     - o1 (Preview)
     - o3-mini (Preview)
@@ -203,11 +279,11 @@ Gratis alternativ för att köra AI-modeller lokalt:
     - Kompatibla med de flesta IDE-plugins
     - Stöd för olika modellformat (GGUF, GGML)
 
-#### **Copilot (GitHub Copilot)**
+#### Copilot (GitHub Copilot)
 GitHub Copilot är en **AI-assistent** som är djupt integrerad i kodeditorer som **Visual Studio Code** och **Visual Studio** och sätter ett tydligt exempel för hur en sådan integration bör fungera.  
 
-#### **Andra AI Plugins i Kodeditorer**
+#### Andra AI Plugins i Kodeditorer
 Utöver Copilot finns det flera andra AI-baserade plugins som hjälper utvecklare att skriva kod mer effektivt och på ett mer intelligent sätt, dessa har oftast inte lika bra integration som Copilot, en fördel de har är att de kan nyttja lokala modeller från Ollama eller LM Studio.
 
-#### **Sammanfattning**
+#### Sammanfattning
 AI-baserade plugins för kodeditorer är en kraftfull hjälp för att skriva kod snabbare och mer effektivt. Även om dessa verktyg har många fördelar, som snabbare kodning och realtidsförslag, måste utvecklare vara medvetna om att AI:n inte alltid är perfekt och att de bör granska förslagen noggrant.

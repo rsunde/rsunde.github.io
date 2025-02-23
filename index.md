@@ -4,6 +4,7 @@
 * [Background / Queues](/backgroundqueues)
 * [Operating Systems](operatingsystems)
 * [Browser Säkerhet](/browsers)
+* [Fil Hanterare / File Managers](/filemanagers)
 * [Nyheter C# v8](/csharp_v8)
 * [Javascript Snippets](/javascript)
 * [Nyheter C# v7](/csharp_v7)
