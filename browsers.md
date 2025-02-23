@@ -25,6 +25,7 @@ OM du gillar - eller inte bryr dig om - att din webbläsare och hemsidor spårar
       - [KeePass-familjen](#keepass-familjen)
     - [Sökmotor](#sökmotor)
     - [Reklam / Ads](#reklam--ads)
+      - [Manifest V3 och Effekter på Extensions](#manifest-v3-och-effekter-på-extensions)
     - [Privacy](#privacy)
     - [Terms of Service](#terms-of-service)
     - [Enhancer for YouTube](#enhancer-for-youtube)
@@ -116,6 +117,17 @@ Googles motto "Do the right thing" påverkar även sökresultaten. Prova iställ
 ### Reklam / Ads
 Installera en kraftfull ad-blocker för en renare surfupplevelse, exempelvis:
 - [uBlock Origin](https://github.com/gorhill/uBlock#ublock-origin) – tillgängligt för både [Chrome](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) och [Firefox](https://addons.mozilla.org/addon/ublock-origin/).
+
+#### Manifest V3 och Effekter på Extensions
+Chrome har infört Manifest V3, vilket innebär stora förändringar för webbläsartillägg, särskilt de som hanterar nätverksförfrågningar, såsom uBlock Origin. Viktiga punkter:
+- Bakgrundssidor ersätts med service workers, vilket kan påverka både prestanda och funktion.
+- Nya restriktioner i API:er kan innebära att vissa blockeringsfunktioner blir mindre effektiva.
+- Tillverkare och utvecklare anpassar sina tillägg för att fungera optimalt under Manifest V3-regler.
+> Firefox och andra icke-Chromium-baserade webbläsare har inte implementerat Manifest V3, utan behåller sin nuvarande tilläggsarkitektur.
+- För mer information se [Chrome's Manifest V3](https://developer.chrome.com/docs/extensions/mv3/).
+- Läs diskussioner om för- och nackdelar:
+   - [Ghacks.net: Chrome Extension Changes and Manifest V3](https://www.ghacks.net/2020/11/19/chrome-extension-changes/)
+   - [9to5Google: Manifest V3 – What it means for extensions](https://9to5google.com/2020/11/19/chrome-extensions-manifest-v3/)
 
 ### Privacy
 För att snabbt få en överblick över hur "säker" en hemsida är, använd:
