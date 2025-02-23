@@ -195,29 +195,9 @@ Populära tjänster (Gratis med begränsningar):
 > **Kom ihåg**: Online-tjänster är enklast att komma igång med, medan lokala installationer ger mer kontroll och integritet.
 
 ### Lokalt
-Gratis alternativ för att köra AI-modeller lokalt:
+För att köra AI-modeller lokalt och få ut maximal prestanda, se vår dedikerade guide: [Lokal AI](/localai).
 
-- [LM Studio](https://lmstudio.ai) 
-  - Användarvänligt GUI för modellhantering
-  - Inbyggd chat och API-server
-  - Windows, macOS, Linux
-
-- [Ollama](https://ollama.ai)
-  - Kommandoradsbaserad modellhantering
-  - REST API för integration
-  - macOS, Linux, Windows (WSL)
-
-- [GPT4All](https://gpt4all.io)
-  - Enkelhet i fokus
-  - Inbyggd modellnedladdning
-  - Cross-platform desktop app
-  - Windows, macOS, Linux
-
-- [LocalAI](https://localai.io)
-  - API-kompatibelt med OpenAI
-  - Containeriserad lösning
-  - Stöd för många modelltyper
-  - Docker-baserad installation
+> För dig som även vill förstå hur säkerhet och AI integreras i operativsystem, kika i [Operating Systems](/operatingsystems).
 
 ## Användning i Arbetssyfte
 
