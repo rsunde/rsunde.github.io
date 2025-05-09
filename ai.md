@@ -26,6 +26,7 @@ Artificiell intelligens (AI) handlar om att skapa system som kan efterlikna och 
       - [Populära Startmodeller](#populära-startmodeller)
     - [Modeller (basmodeller)](#modeller-basmodeller)
     - [Ytterligare modeller och dess varianter](#ytterligare-modeller-och-dess-varianter)
+  - [Jämförelse: Online Pro vs. Lokala Modeller](#jämförelse-online-pro-vs-lokala-modeller)
   - [Användning - Online och Lokalt](#användning---online-och-lokalt)
     - [Online](#online)
     - [Lokalt](#lokalt)
@@ -179,18 +180,31 @@ Det finns flera platser där man kan hitta och experimentera med AI-modeller:
 - **qwen2.5-coder** – Kodspecificerade Qwen-modeller med betydande förbättringar inom kodgenerering, kodresonemang och kodkorrigering.
 - **qwen2.5** – Qwen2.5-modeller förtränade på Alibabas senaste stora dataset, med stöd upp till 128K tokens och flerspråkigt stöd.
 
+## Jämförelse: Online Pro vs. Lokala Modeller
+
+Många av de kraftfulla AI-modellerna som erbjuds online av stora företag har ofta motsvarigheter eller "syskon" i open source-världen som kan köras lokalt. Ibland är de lokala versionerna direkta nedskalade eller tidigare versioner av pro-modellerna, medan andra gånger är de inspirerade av samma arkitekturer. Att förstå dessa kopplingar kan hjälpa dig att välja rätt modell för dina behov, oavsett om du prioriterar toppmodern prestanda via ett API eller flexibiliteten och integriteten med en lokal modell. Det är dock viktigt att notera att en direkt och exakt versionsmatchning sällan är möjlig, då online-tjänster kontinuerligt uppdateras och open source-modeller följer sina egna utvecklingscykler.
+
+| Online Pro Modell (ofta stängd källkod) | Motsvarande Lokal Modell (ofta open source) | Kommentar                                                                                                |
+| :-------------------------------------- | :------------------------------------------ | :------------------------------------------------------------------------------------------------------- |
+| Google Gemini                           | Google Gemma                                | Gemma är en familj av lättviktsmodeller från Google, inspirerade av samma forskning och teknologi som Gemini. De är dock distinkta modellfamiljer med egna versioner (t.ex. Gemma 2B/7B) som inte direkt mappas till specifika Gemini API-versioner (t.ex. Gemini 1.5 Pro). |
+| Anthropic Claude                        | Starka öppna alternativ: Llama 3, Mistral (t.ex. Mixtral 8x7B), Qwen2 | Anthropic har inte släppt en officiell öppen källkodsversion av Claude. De listade modellerna är högpresterande alternativ från öppen källkodsgemenskapen. |
+| OpenAI GPT-serien (t.ex. GPT-4)         | Llama-familjen, Mistral, Phi                | Open source-modeller strävar efter att matcha GPT-seriens kapacitet, ofta med fokus på specifik prestanda. |
+| Cohere Command R+                       | Cohere Command R                            | Command R är en mindre, open source-version avsedd för lokal körning och anpassning.                   |
+
+> **Notera**: "Motsvarande" betyder inte alltid identisk prestanda eller funktionalitet. Online pro-modeller är oftast större och tränade på mer omfattande dataset. De lokala modellerna erbjuder dock en utmärkt balans mellan prestanda, anpassningsbarhet och tillgänglighet för utvecklare och entusiaster.
+
 ## Användning - Online och Lokalt
 
 ### Online
 Populära tjänster (Gratis med begränsningar):
-1. [ChatGPT](https://chat.openai.com) (Plus: $20/månad, Team: $30/användare/månad)
-1. [Microsoft CoPilot](https://copilot.cloud.microsoft/) (Pro: $30/månad)
-1. [Google Gemini](https://gemini.google.com/app) (Advanced: $10/månad)
-1. [Anthropic Claude](https://claude.ai/) (Pro: $20/månad)
-1. [X Grok](https://grok.com/) (Premium X: $16/månad)
-1. [Meta AI](https://meta.ai/llama) (Gratis)
-- [Hugging Face](https://huggingface.co) - Öppen plattform för AI och maskininlärning (Pro: från $9/månad).
+- [ChatGPT](https://chat.openai.com) (Plus: $20/månad, Team: $30/användare/månad)
+- [Microsoft CoPilot](https://copilot.cloud.microsoft/) (Pro: $30/månad)
+- [Google Gemini](https://gemini.google.com/app) (Advanced: $10/månad)
+- [Anthropic Claude](https://claude.ai/) (Pro: $20/månad)
+- [X Grok](https://grok.com/) (Premium X: $16/månad)
+- [Meta AI](https://meta.ai/llama) (Gratis)
 - [Replicate](https://replicate.com) - Plattform för att köra AI-modeller i molnet (Pay-per-use).
+- [Hugging Face](https://huggingface.co) - Öppen plattform för AI och maskininlärning (Pro: från $9/månad).
 
 > **Kom ihåg**: Online-tjänster är enklast att komma igång med, medan lokala installationer ger mer kontroll och integritet.
 
@@ -242,7 +256,14 @@ För att köra AI-modeller lokalt och få ut maximal prestanda, se vår dedikera
     - Kör modeller separat från användargränssnittet
     - Stödjer API-anrop från externa applikationer
     - Kan köras headless för serverinstallationer
-
+- Jan
+  - Användarvänligt gränssnitt för att:
+    - Hitta och ladda ner modeller
+    - Chatta med modeller direkt i programmet
+    - Hantera flera modeller samtidigt
+  - Inkluderar serverkomponent som:
+    - Kör modeller separat från användargränssnittet
+    - Stödjer API-anrop från externa applikationer
 - Ollama
   - Fokuserad serverkomponent som:
     - Erbjuder robust API för modellhantering
@@ -251,7 +272,6 @@ För att köra AI-modeller lokalt och få ut maximal prestanda, se vår dedikera
   - Populära webb-baserade gränssnitt:
     - [OpenWebUI](https://github.com/open-webui/open-webui)
     - [Amica](https://github.com/semperai/amica)
-
 - LM Studio / Ollama - Serverintegration
   - Gemensamma egenskaper:
     - REST API på localhost (standard)

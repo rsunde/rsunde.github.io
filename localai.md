@@ -16,6 +16,10 @@
 - **Kontroll:** Full insyn och kontroll över konfiguration och drift.
 
 ## Rekommenderade verktyg
+- [Jan](https://jan.ai) 
+  - Användarvänligt GUI för modellhantering.
+  - Inbyggd chat och API-server.
+  - Fungerar på Windows, macOS och Linux.
 - [LM Studio](https://lmstudio.ai) 
   - Användarvänligt GUI för modellhantering.
   - Inbyggd chat och API-server.

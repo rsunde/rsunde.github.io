@@ -5,6 +5,7 @@
 * [Fil Hanterare / File Managers](/filemanagers)
 * [Artificial Intelligence](/ai)
   * [Lokal AI](/localai)
+  * [AI Programming](/aiprogramming)
 * Programmering
   * [Background / Queues](/backgroundqueues)
   * [Nyheter C# v8](/csharp_v8)
