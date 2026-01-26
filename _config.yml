@@ -1,4 +1,5 @@
-theme: jekyll-theme-architect
+theme: jekyll-theme-hacker
 title: Ronnie Sunde
 description: Blog
-google_analytics: [Your Google Analytics tracking ID]
+google_analytics: theme: jekyll-theme-architect
+
