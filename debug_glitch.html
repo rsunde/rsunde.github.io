@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Remote Hacker Theme CSS -->
+    <link rel="stylesheet" href="https://pages-themes.github.io/hacker/assets/css/style.css?v=123456">
+
+    <!-- Local Assets -->
+    <link href="../Websites__Static/bird.css" rel="stylesheet" type="text/css">
+    <link href="../Websites__Static/caterpillar.css" rel="stylesheet" type="text/css">
+
+    <title>Glitch Debug Page</title>
+</head>
+
+<body>
+    <div id="bird" style="position: absolute; z-index: 9999;"></div>
+
+    <header>
+        <div class="container">
+            <a id="a-title" href="#">
+                <h1>rsunde/debug</h1>
+            </a>
+            <h2>Debugging 'Glitch' the Caterpillar</h2>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="main_content">
+            <h1>Testing Ground</h1>
+            <p>This page mimics the Hacker theme layout to test the caterpillar animation.</p>
+
+            <h2>Control Panel</h2>
+            <div style="background: #222; padding: 10px; border: 1px dashed #b5e853; margin-bottom: 20px;">
+                <button onclick="window.glitch.respawn({type: 'SIDE', side: 'LEFT'})">Spawn Left</button>
+                <button onclick="window.glitch.respawn({type: 'SIDE', side: 'RIGHT'})">Spawn Right</button>
+                <button onclick="window.glitch.respawn({type: 'TOP'})">Spawn Top (Dangle)</button>
+                <button onclick="window.glitch.forceState('SCARED')">Scare</button>
+                <button onclick="window.glitch.forceState('PAUSED')">Pause</button>
+            </div>
+
+            <h2>What to test:</h2>
+            <ul>
+                <li><strong>Arrival</strong>: Reload the page. Does Glitch drop from the top or crawl from the side?
+                </li>
+                <li><strong>Crawling</strong>: Does Glitch crawl along the green dotted line (bottom of header)?</li>
+                <li><strong>Interaction</strong>: Move your mouse close to Glitch. Does he get scared (turn red/run)?
+                </li>
+                <li><strong>Responsiveness</strong>: Resize the window. If Glitch is cut off, does he respawn?</li>
+            </ul>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </section>
+    </div>
+
+    <!-- Bird and Extras Mock Config -->
+    <script type="text/javascript">
+        window.BirdPositions = {
+            startPos: { left: -196, top: -95 },
+            positions: [
+                { left: 10, top: 10 },
+                { left: 100, top: 10 },
+                { left: 200, top: 10 }
+            ]
+        };
+    </script>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../Websites__Static/bird.js"></script>
+    <!-- Mock Raptorize for now or link correctly if available -->
+    <script>
+        $.fn.raptorize = function () { console.log("Raptorize mock initialized"); };
+    </script>
+
+    <script src="../Websites__Static/caterpillar.js"></script>
+</body>
+
+</html>
