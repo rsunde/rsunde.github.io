@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
 
+    <!-- <link rel="stylesheet" href="{{ " /assets/css/csharp.css" | prepend: site.baseurl }}"> -->
+    <link href="https://rsunde.github.io/Websites__Static/bird.css" rel="stylesheet" type="text/css">
+
     {% seo %}
 </head>
 
 <body>
+    <div id="bird" style="position: absolute; z-index: 9999;"></div>
 
     <header>
         <div class="container">
@@ -35,6 +39,31 @@
             {{ content }}
         </section>
     </div>
+
+    <!-- Bird and Extras -->
+    <script type="text/javascript">
+        window.BirdPositions = {
+            startPos: { left: -196, top: -95 },
+            positions: [
+                // Placeholder positions for Hacker theme
+                { left: 10, top: 10 },
+                { left: 100, top: 10 },
+                { left: 200, top: 10 }
+            ]
+        };
+    </script>
+
+    <script src="https://rsunde.github.io/Websites__Static/jquery-2.1.4.min.js"></script>
+    <script src="https://rsunde.github.io/Websites__Static/bird.js"></script>
+    <script src="https://rsunde.github.io/Websites__Static/jquery.raptorize.1.0.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            // Konami Code for Raptorize
+            $('body').raptorize({
+                'enterOn': 'konami-code'
+            });
+        });
+    </script>
 </body>
 
 </html>
