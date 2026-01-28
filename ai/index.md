@@ -209,9 +209,9 @@ Populära tjänster (Gratis med begränsningar):
 > **Kom ihåg**: Online-tjänster är enklast att komma igång med, medan lokala installationer ger mer kontroll och integritet.
 
 ### Lokalt
-För att köra AI-modeller lokalt och få ut maximal prestanda, se vår dedikerade guide: [Lokal AI](/localai).
+För att köra AI-modeller lokalt och få ut maximal prestanda, se vår dedikerade guide: [Lokal AI](/ai/localai).
 
-> För dig som även vill förstå hur säkerhet och AI integreras i operativsystem, kika i [Operating Systems](/operatingsystems).
+> För dig som även vill förstå hur säkerhet och AI integreras i operativsystem, kika i [Operating Systems](/guides/operatingsystems).
 
 ## Användning i Arbetssyfte
 

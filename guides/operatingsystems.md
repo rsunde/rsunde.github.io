@@ -436,7 +436,7 @@ För gamers och AI-entusiaster som siktar på att utnyttja de senaste AMD-grafik
 
 Det rekommenderas att köra Windows 10 eller 11 för att få ut maximal prestanda med moderna AMD-kort.
 
-> **För mer information om lokal AI-körning, se [Lokal AI](/localai).**
+> **För mer information om lokal AI-körning, se [Lokal AI](/ai/localai).**
 
 ## Final Thoughts
 
