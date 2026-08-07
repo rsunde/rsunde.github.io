@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs
+
+# Claude Code per-developer overrides
+.claude/settings.local.json

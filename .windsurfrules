@@ -1,1 +1,2 @@
-Please follow the instructions in the `AGENTS.md` file in the root of this repository.
+This project uses AGENTS.md as the single source of truth for AI agent instructions.
+Read and follow ./AGENTS.md. Do not duplicate guidance here — edit AGENTS.md.
