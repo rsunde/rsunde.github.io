@@ -69,13 +69,9 @@ templating beyond what Jekyll/Liquid does natively.
 
 ## 5. Rules (non-negotiable — these override default agent behaviour)
 
-1. **Source of Truth**: this `AGENTS.md` is the single source of truth. Make all changes here,
-   never in the pointer files.
-2. **No root clutter**: don't create temporary files in the repo root; clean up after yourself.
-3. **Safety**: never delete data or implementation files (or delete markdown content) without
-   explicit confirmation. Prefer moving superseded files aside over deleting them.
-4. **Delegate to sub-agents** for any multi-step or multi-file work. Reserve the main thread for
-   orchestration — planning, dispatching, summarising. The conductor, not the player.
+No repo-specific rules today — generic agent-behaviour guidance (delegation, root-clutter,
+deletion safety) lives once in `X:\git\rsunde\AGENTS.md` under "Agent-instructions standard →
+Working style"; this repo has nothing beyond that estate-wide default.
 
 ---
 
