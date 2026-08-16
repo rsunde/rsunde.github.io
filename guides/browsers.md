@@ -90,15 +90,32 @@ juridiskt bindande i vissa jurisdiktioner, bland annat under Kaliforniens datask
 skillnaden mellan en artig förfrågan och ett krav. Aktivera den om din webbläsare stödjer den — men
 räkna inte med den utanför de områden där den har rättslig verkan.
 
-### Betalningsuppgifter och adresser
+### Lösenord, kort och adresser
 
-Varför skulle webbläsaren behöva spara detta? Du har en lösenordshanterare ändå. Stäng av både
-sparade betalningsmetoder och automatisk ifyllnad av adresser.
+Låt oss vara ärliga: att webbläsaren fyller i lösenord, kortnummer och leveransadress åt dig är
+riktigt skönt. Det är noll friktion, det bara fungerar, och det är därför i stort sett alla har det
+påslaget. Stäng av det ändå. Det finns två skäl, och det andra är förmodligen det som faktiskt får
+dig att byta.
 
-### Låt inte webbläsaren hantera lösenorden
+**Det är en integritetsfråga.** Uppgifterna hamnar i webbläsarens profil och synkas i regel vidare
+till leverantörens konto — alltså till Google, Microsoft eller Apple. Det är ännu en samling
+uppgifter om dig hos ett företag vars affärsmodell du precis läst en hel sida om. Skyddet är
+dessutom ofta svagare än du tror: valvet är i praktiken upplåst så länge du är inloggad i din
+profil, vilket innebär att skadlig kod som kommer åt profilmappen kommer åt alltihop. Ett kortnummer
+sparat "för bekvämlighets skull" är ett kortnummer på vift.
 
-Använd en dedikerad lösenordshanterare istället — se [nedan](#lösenordshanterare). Webbläsarens
-inbyggda lager är knutet till just den webbläsaren och skyddas ofta bara av att du är inloggad.
+**Och det följer inte med dig.** Det här är den praktiska invändningen: webbläsarens valv fungerar
+bara i den webbläsaren. Chromes lösenord finns inte i Firefox. Firefox lösenord finns inte i Safari.
+Kör du Firefox på datorn och något annat i mobilen har du två halvfyllda valv och ingen aning om
+vilket som är aktuellt. Och den dagen du vill byta webbläsare — vilket är precis vad den här sidan
+föreslår att du gör — sitter allt fast i den du försöker lämna.
+
+En dedikerad lösenordshanterare löser båda problemen på en gång. Den fungerar i alla webbläsare, på
+alla enheter, och även utanför webbläsaren i vanliga program och appar. Du äger valvet, du kan
+exportera det, och du kan byta webbläsare på en eftermiddag utan att förlora någonting.
+
+Så: stäng av sparade lösenord, sparade betalningsmetoder och automatisk ifyllnad av adresser i
+webbläsaren, och lägg allt i en riktig hanterare istället — se [nedan](#lösenordshanterare).
 
 ### Site Permissions
 
