@@ -24,11 +24,11 @@ not full docs.
     referenced by current front matter).
   - `ai/` — `index.md`, `aiprogramming.md`, `localai.md`.
   - `guides/` — `browsers.md`, `filemanagers.md`, `operatingsystems.md`.
-  - `programming/` — 11 files; most are substantive (`testing.md`, `csharp_v6.md`,
-    `method_keywords.md`, `database.md`, `backgroundqueues.md`, `javascript.md`), several are
-    stubs (`csharp_v7.md`/`csharp_v8.md` are 3-byte placeholders, `orm.md` is 87 bytes, `test.md`
-    duplicates `testing.md`).
-  - `assets/css/` (`main.css`, `csharp.css`), `assets/images/` (mostly NoSQL diagrams).
+  - `_archive/` — retired content, kept in git but **not published** (Jekyll skips top-level
+    `_`-prefixed directories). Currently holds the whole former `programming/` section (11 pages)
+    and `assets/images/` (7 NoSQL/SQL diagrams used only by its `database.md`). See
+    `_archive/README.md` for the restore procedure.
+  - `assets/css/` (`main.css`, `csharp.css`) — see §7; both are currently unreachable.
   - `index.md` — Swedish-language homepage/nav linking the sections above; `favorites.md` — a
     2-line bookmark list; `debug_glitch.html` — see §7.
 
@@ -52,10 +52,10 @@ there's no in-repo build command to quote.
 
 Static Jekyll site rendering Markdown through `_layouts/default.html` (the remote "hacker"
 theme) into HTML served at `ronniesunde.com`. New guide content goes in `guides/*.md`, AI notes
-in `ai/*.md`, programming/language notes in `programming/*.md` — each new page needs a manual
-link added to `index.md`'s nav list (there's no auto-generated index/collection). Shared CSS
-lives in `assets/css/`, shared images in `assets/images/`. No database, no build-time
-templating beyond what Jekyll/Liquid does natively.
+in `ai/*.md` — each new page needs a manual link added to `index.md`'s nav list (there's no
+auto-generated index/collection). Retiring a page means moving it under `_archive/` (mirroring
+its original path) and dropping its nav link, not deleting it. Shared CSS lives in
+`assets/css/`. No database, no build-time templating beyond what Jekyll/Liquid does natively.
 
 ---
 
@@ -95,9 +95,14 @@ docs/README reflect it.
 - `_site` (Jekyll's build output directory) is **not** in `.gitignore` — a local `jekyll
   serve`/`build` can leave generated artifacts untracked-but-unignored. Don't `git add` a `_site/`
   directory if one appears locally.
-- `programming/csharp_v7.md` and `csharp_v8.md` are single-word stub pages ("v7"/"v8") — not
-  broken, just unwritten. `programming/orm.md` (87 bytes) and `programming/test.md` (duplicate of
-  `testing.md`) are similarly thin/stub content.
+- The `programming/` section was archived on 2026-08-16 (moved to `_archive/programming/`, nav
+  links removed from `index.md`). It was a mix of substantive pages (`testing.md`, `csharp_v6.md`,
+  `method_keywords.md`, `database.md`) and stubs (`csharp_v7.md`/`csharp_v8.md` are 3-byte
+  placeholders, `async.md` is a bare heading, `orm.md` is 87 bytes, `test.md` is an unexplained
+  C# snippet). Don't re-add it to the nav without asking.
+- `assets/css/main.css` and `csharp.css` are dead — `csharp.css` is commented out in
+  `_layouts/default.html`, and both are only linked from the orphaned `default_architect.html`.
+  `main.css` also styles `#main-content`, while the active layout uses `id="main_content"`.
 - `_layouts/default_architect.html` is dead/orphaned — the active theme is `hacker`
   (`remote_theme` in `_config.yml`), not `architect`. Don't assume it's wired in.
 - `_config.yml`'s `google_analytics: sdfgkj` looks like a placeholder/dummy tracking ID, not a
