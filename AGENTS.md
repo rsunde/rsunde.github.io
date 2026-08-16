@@ -14,33 +14,34 @@ not full docs.
   domain `ronniesunde.com` (via `CNAME`). Content: AI/programming notes, OS/browser/file-manager
   guides, and a short bookmarks page.
 - **Stack**: Jekyll static site, served via GitHub's classic Pages build pipeline (no GitHub
-  Actions workflow, no `Gemfile`/`Gemfile.lock` — Ruby/Jekyll versions are unpinned). Theme:
-  `jekyll-theme-hacker` via `remote_theme: pages-themes/hacker@v0.2.0` (the `jekyll-remote-theme`
-  plugin). `_config.yml` has a leftover comment referencing `jekyll-theme-architect` as an
-  alternate — not the active theme.
+  Actions workflow). A `Gemfile` pins the `github-pages` gem so local builds match production —
+  see §2 and §7. Theme: `jekyll-theme-hacker` via `remote_theme: pages-themes/hacker@v0.2.0`
+  (the `jekyll-remote-theme` plugin).
 - **Layout**:
   - `_layouts/` — `default.html` (active, hacker theme base), `post.html` (extends default, adds
-    date/tags), `default_architect.html` (orphaned — leftover from the architect theme, not
-    referenced by current front matter).
+    date/tags).
   - `ai/` — `index.md`, `aiprogramming.md`, `localai.md`.
   - `guides/` — `browsers.md`, `filemanagers.md`, `operatingsystems.md`.
   - `_archive/` — retired content, kept in git but **not published** (Jekyll skips top-level
-    `_`-prefixed directories). Currently holds the whole former `programming/` section (11 pages)
-    and `assets/images/` (7 NoSQL/SQL diagrams used only by its `database.md`). See
-    `_archive/README.md` for the restore procedure.
-  - `assets/css/` (`main.css`, `csharp.css`) — see §7; both are currently unreachable.
+    `_`-prefixed directories). Holds the former `programming/` section (11 pages), its
+    `assets/images/` diagrams, the dead `assets/css/`, and the orphaned
+    `_layouts/default_architect.html`. See `_archive/README.md` for the restore procedure.
   - `index.md` — Swedish-language homepage/nav linking the sections above; `favorites.md` — a
     2-line bookmark list; `debug_glitch.html` — see §7.
+  - The repo ships **no CSS of its own** — all styling comes from the remote hacker theme.
 
 ---
 
 ## 2. Commands
 
 ```bash
-# No Gemfile is pinned — install Jekyll/bundler globally and serve:
-gem install bundler jekyll
+bundle install
 bundle exec jekyll serve   # no committed port/flags — defaults to http://localhost:4000
 ```
+
+**Always use `bundle exec` with the committed `Gemfile`** — never a globally installed Jekyll.
+The `Gemfile` pulls in the `github-pages` gem, which pins Jekyll and its plugin set to what the
+Pages build actually runs. Plain Jekyll silently renders this site *differently* — see §7.
 
 Deploy is GitHub's legacy/classic Pages pipeline, auto-triggered on push to `master` — no GitHub
 Actions workflow exists (`.github/` has no `workflows/`, only `copilot-instructions.md`), so
@@ -54,8 +55,8 @@ Static Jekyll site rendering Markdown through `_layouts/default.html` (the remot
 theme) into HTML served at `ronniesunde.com`. New guide content goes in `guides/*.md`, AI notes
 in `ai/*.md` — each new page needs a manual link added to `index.md`'s nav list (there's no
 auto-generated index/collection). Retiring a page means moving it under `_archive/` (mirroring
-its original path) and dropping its nav link, not deleting it. Shared CSS lives in
-`assets/css/`. No database, no build-time templating beyond what Jekyll/Liquid does natively.
+its original path) and dropping its nav link, not deleting it. All styling comes from the remote
+theme — the repo ships no CSS. No database, no build-time templating beyond Jekyll/Liquid.
 
 ---
 
@@ -92,22 +93,30 @@ docs/README reflect it.
   animation) that references `../Websites__Static/bird.css/js` and `caterpillar.css/js` — paths
   **outside this repo**, so it's broken/non-functional as committed. It's leftover local-testing
   content, not real site content; leave as-is unless asked to clean it up.
-- `_site` (Jekyll's build output directory) is **not** in `.gitignore` — a local `jekyll
-  serve`/`build` can leave generated artifacts untracked-but-unignored. Don't `git add` a `_site/`
-  directory if one appears locally.
+- **No page in this repo has YAML front matter** — not `index.md`, not any content page. Only
+  `_layouts/post.html` does. This is load-bearing, not an oversight to "fix": the site renders
+  because GitHub Pages force-enables `jekyll-optional-front-matter` (renders front-matter-less
+  Markdown at all), `jekyll-default-layout` (assigns `default`) and `jekyll-titles-from-headings`
+  (title from the first `#`), and `_layouts/default.html` calls `{% seo %}` from `jekyll-seo-tag`.
+  A plain `jekyll serve` without the `github-pages` gem copies those pages verbatim instead of
+  rendering them, and errors on `{% seo %}`. Hence the `Gemfile` — always `bundle exec`.
+  Adding front matter to pages is fine, but don't do it *believing the site is broken without it*.
+- Don't add an `exclude:` key to `_config.yml` to hide `_archive/` — Jekyll's `exclude` **replaces**
+  its default list (`Gemfile`, `vendor/`, `node_modules`, …) rather than extending it. The
+  leading underscore already keeps `_archive/` out of the build.
 - The `programming/` section was archived on 2026-08-16 (moved to `_archive/programming/`, nav
   links removed from `index.md`). It was a mix of substantive pages (`testing.md`, `csharp_v6.md`,
   `method_keywords.md`, `database.md`) and stubs (`csharp_v7.md`/`csharp_v8.md` are 3-byte
   placeholders, `async.md` is a bare heading, `orm.md` is 87 bytes, `test.md` is an unexplained
   C# snippet). Don't re-add it to the nav without asking.
-- `assets/css/main.css` and `csharp.css` are dead — `csharp.css` is commented out in
-  `_layouts/default.html`, and both are only linked from the orphaned `default_architect.html`.
-  `main.css` also styles `#main-content`, while the active layout uses `id="main_content"`.
-- `_layouts/default_architect.html` is dead/orphaned — the active theme is `hacker`
-  (`remote_theme` in `_config.yml`), not `architect`. Don't assume it's wired in.
-- `_config.yml`'s `google_analytics: sdfgkj` looks like a placeholder/dummy tracking ID, not a
-  real one — don't treat analytics as actually configured.
-- No `Gemfile`/`Gemfile.lock` — Jekyll/Ruby versions are unpinned and unverified.
+- Cleaned up 2026-08-16, all archived rather than deleted: `assets/css/{main,csharp}.css` (dead —
+  only ever linked from the orphaned architect layout), `_layouts/default_architect.html`
+  (leftover from the architect theme, never wired into the active `hacker` one), and the
+  commented-out dead markup in `_layouts/default.html`. The dummy `google_analytics: sdfgkj`
+  was removed from `_config.yml` — there is **no analytics on this site**, by choice.
+- `_config.yml` carries both `theme: jekyll-theme-hacker` and `remote_theme:
+  pages-themes/hacker@v0.2.0`. Redundant but harmless — `remote_theme` wins. Left alone
+  deliberately; changing it alters rendering and there's no local build here to verify against.
 - A prior `AGENTS.md` existed and was explicitly deleted in a recent commit ("chore: Remove
   AGENTS.md file as it is no longer needed") before this file was regenerated — the pointer files
   (`.cursorrules`, `.windsurfrules`, copilot-instructions) had been left dangling in the interim,

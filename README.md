@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+# rsunde.github.io
 
-You can use the [editor on GitHub](https://github.com/rsunde/rsunde.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Ronnie Sunde's personal site — notes and guides, mostly in Swedish. Live at
+**[ronniesunde.com](https://ronniesunde.com)**.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## What's here
 
-### Markdown
+| Path | Contents |
+|---|---|
+| `guides/` | Operating system privacy, browser security, file managers |
+| `ai/` | LLM overview, running AI locally, AI-assisted programming |
+| `index.md` | Homepage and hand-maintained nav — every new page needs a link added here |
+| `_layouts/` | `default.html` (site base), `post.html` |
+| `_archive/` | Retired content, kept in git but not published — see `_archive/README.md` |
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Local development
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+bundle install
+bundle exec jekyll serve   # http://localhost:4000
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Use `bundle exec` and the committed `Gemfile`, not a globally installed Jekyll. The `Gemfile`
+pulls in the `github-pages` gem, which pins Jekyll and its plugins to what GitHub Pages actually
+runs. That matters here: none of this site's Markdown has YAML front matter, so it renders only
+because GitHub Pages force-enables `jekyll-optional-front-matter`, `jekyll-default-layout` and
+`jekyll-titles-from-headings`. A plain `jekyll serve` produces different output than production.
 
-### Jekyll Themes
+## Deployment
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rsunde/rsunde.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Automatic, via GitHub Pages' classic build pipeline, on every push to `master`. There is no
+GitHub Actions workflow and no build step in this repo. The custom domain is set by `CNAME`.
 
-### Support or Contact
+## Notes
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The site depends on assets served from a separate repo at
+`https://rsunde.github.io/Websites__Static/` (jQuery, plus the bird/caterpillar animations and
+the Konami-code easter egg wired up in `_layouts/default.html`).
+
+Agent and contributor instructions live in [`AGENTS.md`](AGENTS.md).

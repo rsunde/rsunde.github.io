@@ -4,5 +4,10 @@
 
 /.vs
 
+# Jekyll build output and caches
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
 # Claude Code per-developer overrides
 .claude/settings.local.json
