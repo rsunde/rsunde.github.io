@@ -11,8 +11,10 @@ not full docs.
 ## 1. Project Overview
 
 - **rsunde.github.io** — Ronnie Sunde's personal Jekyll site/digital garden, served at the custom
-  domain `ronniesunde.com` (via `CNAME`). Content: AI/programming notes, OS/browser/file-manager
-  guides, and a short bookmarks page.
+  domain `ronniesunde.com` (via `CNAME`). Content: three opinionated guides (OS privacy, browser
+  privacy, file managers), two AI notes (concepts, running models locally), and a short bookmarks
+  page. All prose is Swedish. As of 2026-08-16 every page has been rewritten to the rot-proof
+  standard in §4 — read that before adding content.
 - **Stack**: Jekyll static site, served via GitHub's classic Pages build pipeline (no GitHub
   Actions workflow). A `Gemfile` pins the `github-pages` gem so local builds match production —
   see §2 and §7. Theme: `jekyll-theme-hacker` via `remote_theme: pages-themes/hacker@v0.2.0`
