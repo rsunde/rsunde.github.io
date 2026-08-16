@@ -1,147 +1,158 @@
 # Filhanterare Översikt
 
-En effektiv filhanterare är ett av de viktigaste verktygen för produktivt datorarbete. Medan Windows inbyggda Utforskaren fungerar för grundläggande behov, finns det många situationer där en mer avancerad filhanterare kan spara timmar av arbete:
+En effektiv filhanterare är ett av de viktigaste verktygen för produktivt datorarbete. Medan Windows
+inbyggda Utforskaren fungerar för grundläggande behov, finns det många situationer där en mer
+avancerad filhanterare kan spara timmar av arbete:
 
-- **Tidsbesparingar**: Snabbkommandon, dubbla paneler och anpassningsbara arbetsflöden effektiviserar filhantering
-- **Bättre översikt**: Avancerade filtreringsfunktioner och sökverktyg hjälper dig hitta filer snabbare
-- **Automation**: Möjlighet att automatisera upprepade uppgifter som filflyttning och namnbyten
-- **Förbättrad säkerhet**: Inbyggda funktioner för säkerhetskopiering och felkontroll
-- **Ökad kontroll**: Detaljerade filattribut och möjlighet att hantera systemfiler på ett säkert sätt
+- **Tidsbesparingar**: snabbkommandon, dubbla paneler och anpassningsbara arbetsflöden effektiviserar
+  filhantering
+- **Bättre översikt**: avancerad filtrering och sökverktyg hjälper dig hitta filer snabbare
+- **Automation**: möjlighet att automatisera upprepade uppgifter som filflyttning och namnbyten
+- **Ökad kontroll**: detaljerade filattribut och möjlighet att hantera systemfiler säkert
 
-## Filosofier och Designprinciper
-Olika filhanterare bygger på skilda filosofier, särskilt när det gäller presentation och arbetsflöde:
+## Innehåll
+
+- [Filosofier och designprinciper](#filosofier-och-designprinciper)
+- [Utmärkande funktioner](#utmärkande-funktioner)
+- [Filhanterare](#filhanterare)
+- [Efter testperioden](#efter-testperioden)
+
+## Filosofier och designprinciper
+
+Olika filhanterare bygger på skilda filosofier, särskilt när det gäller presentation och arbetsflöde.
+Det är den här skillnaden — inte funktionslistan — som avgör om ett program passar dig.
 
 ### Presentationsstilar
+
 - **Enkelpanel (Explorer-stil)**
-  - *Windows Explorer, Files*: Ett fönster med fokus på aktuell mapp
-  - Fördelar: Bekant, tar mindre skärmutrymme
-  - Nackdelar: Kräver flera fönster för filflyttning
-  - Arbetssätt: Passar för enkel filbläddring och grundläggande operationer
+  - *Windows Utforskaren, Files*: ett fönster med fokus på aktuell mapp
+  - Fördelar: bekant, tar mindre skärmutrymme
+  - Nackdelar: kräver två fönster sida vid sida för att flytta filer
+  - Passar för enkel filbläddring och grundläggande operationer
 
 - **Dubbelpanel (Commander-stil)**
-  - *Total Commander, Directory Opus*: Två paneler sida vid sida
-  - Fördelar: Effektiv filflyttning, bättre överblick
-  - Nackdelar: Kräver mer skärmutrymme, brantare inlärningskurva
-  - Arbetssätt: Optimal för filorganisering och jämförelse
+  - *Total Commander, Directory Opus*: två paneler sida vid sida
+  - Fördelar: effektiv filflyttning, bättre överblick, källa och mål alltid synliga
+  - Nackdelar: kräver mer skärmutrymme, brantare inlärningskurva
+  - Optimal för filorganisering och jämförelse
 
-- **Flexibel Layout**
-  - *XYplorer, Directory Opus*: Anpassningsbar panel-layout
-  - Fördelar: Kan växla mellan enkel/dubbel panel efter behov
-  - Nackdelar: Kan bli komplext att konfigurera
-  - Arbetssätt: Passar power users som växlar mellan olika arbetsuppgifter
+- **Flexibel layout**
+  - *XYplorer, Directory Opus*: anpassningsbar panel-layout
+  - Fördelar: kan växla mellan enkel och dubbel panel efter behov
+  - Nackdelar: kan bli komplext att konfigurera
+  - Passar den som växlar mellan olika typer av arbetsuppgifter
+
+> **Den verkliga skiljelinjen** går vid om du flyttar mycket filer mellan platser eller mest letar
+> efter dem. Flyttar du: dubbelpanel, utan tvekan. Letar du: enkelpanel med bra sök räcker långt.
 
 ### Tabbhantering
-- **Traditionell (ett fönster)**
-  - *Windows Explorer*: Separata fönster för varje mapp
-  - Fördelar: Enkelt att förstå
-  - Nackdelar: Skrivbordet blir snabbt rörigt
 
-- **Modern Tabbhantering**
-  - *Files, XYplorer*: Flera mappar i samma fönster via flikar
-  - Fördelar: Bättre organisation, snabbare växling mellan mappar
-  - Arbetssätt: Liknar webbläsare, intuitivt för moderna användare
+- **Grundläggande flikar**
+  - *Windows Utforskaren*: fick flikar i Windows 11, vilket täcker det enklaste behovet. En panel i
+    taget, inga sparade sessioner.
+  - Fördelar: finns redan, inget att installera
+  - Nackdelar: flikarna försvinner när du stänger fönstret
 
-- **Avancerad Tabbhantering**
-  - *Directory Opus, Total Commander*: Flikar per panel, sparade sessioner
-  - Fördelar: Maximal flexibilitet, effektivt för komplexa arbetsflöden
-  - Arbetssätt: Passar för professionellt bruk med många samtidiga operationer
+- **Modern tabbhantering**
+  - *Files, XYplorer*: flera mappar i samma fönster, som i en webbläsare
+  - Fördelar: bättre organisation, snabb växling mellan mappar
 
-## Utmärkande Funktioner
-Moderna filhanterare erbjuder flera imponerande funktioner som gör dem oumbärliga:
+- **Avancerad tabbhantering**
+  - *Directory Opus, Total Commander*: flikar per panel, låsta flikar och sparade sessioner
+  - Fördelar: hela arbetsuppsättningar kan återskapas med ett klick
+  - Passar professionellt bruk med många samtidiga operationer
 
-- **Kraftfull Sökning**: 
-  - XYplorer's "Ultra Find" med reguljära uttryck och innehållssökning
+## Utmärkande funktioner
+
+- **Kraftfull sökning**
+  - XYplorers "Ultra Find" med reguljära uttryck och innehållssökning
   - Directory Opus avancerade filtreringssystem
-  - Total Commander's sökning inuti arkivfiler
+  - Total Commanders sökning inuti arkivfiler
 
-- **Smart Automation**:
-  - File Pilot's automatiska filorganisering
-  - XYplorer's skriptbara actions och paper folders
+- **Automation**
+  - XYplorers skriptbara actions och "paper folders"
   - Directory Opus anpassningsbara knapprader
+  - File Pilots fokus på snabba, skriptbara arbetsflöden
 
-- **Effektiv Visualisering**:
-  - Files' moderna förhandsvisning av dokument och media
-  - Total Commander's inbyggda bildvisare
-  - XYplorer's färgkodning och taggningssystem
+- **Visualisering**
+  - Files moderna förhandsvisning av dokument och media
+  - Total Commanders inbyggda bildvisare
+  - XYplorers färgkodning och taggningssystem
 
-- **Produktivitetsverktyg**:
-  - Xplorer2's inbyggda texteditor och jämförelseverktyg
+- **Produktivitetsverktyg**
+  - Xplorer2:s inbyggda texteditor och jämförelseverktyg
   - Directory Opus metadata-hantering
-  - Total Commander's FTP-klient och arkivhantering
+  - Total Commanders FTP-klient och arkivhantering
 
-## Lista över Filhanterare
+## Filhanterare
 
-### Gratis (sorterat med yngst överst)
-- [**Files**](https://files.community)  
-  En modern filhanterare som fokuserar på användarvänlighet och snabba förhandsvisningar, levereras med appinstaller-konfiguration.  
-  *Aktiv sedan 2018*  
-  *Pris: Gratis*
+### Gratis
 
-- [**Explorer++**](http://explorerplusplus.com)  
-  En lättviktig, open-source filhanterare med ett rent gränssnitt och stöd för flikar, idealisk för snabba operationer.  
-  *Aktiv sedan 2008*  
-  *Pris: Gratis*
+- [**Files**](https://files.community)
+  Modern filhanterare med fokus på användarvänlighet och snabba förhandsvisningar. Öppen källkod.
+  *Sedan 2018.*
 
-- [**Windows Explorer**](https://www.microsoft.com/windows)  
-  Den inbyggda filhanteraren i Windows med ett enkelt gränssnitt, integrerad med operativsystemets funktioner för grundläggande filhantering.  
-  *Aktiv 30+ år*  
-  *Pris: Ingår i Windows*
+- [**Explorer++**](https://explorerplusplus.com)
+  Lättviktig och öppen källkod, med rent gränssnitt och stöd för flikar. Idealisk för snabba
+  operationer och kan köras portabelt.
+  *Sedan 2008.*
 
-### Betalda produkter (sorterade från lägst till högst pris)
-- [**File Pilot**](https://filepilot.tech/)  
-  En innovativ lösning som kombinerar traditionell filhantering med automatiseringsfunktioner och skriptbarhet för mer effektiva arbetsflöden.  
-  *Aktiv sedan 2021*  
-  *[Pris: $29.95](https://filepilot.tech/pricing) (Livstidslicens med uppdateringar för Pro-versionen (när den släpps)
-Notering: Programmet är gratis under betaperioden; priset är en approximation för den framtida Pro-versionen.)*
+- [**Windows Utforskaren**](https://www.microsoft.com/windows)
+  Den inbyggda filhanteraren. Har fått flikar i Windows 11 och räcker för grundläggande behov.
+  *Ingår i Windows.*
 
-- [**XYplorer**](https://www.xyplorer.com)  
-  Ett kraftfullt och flexibelt verktyg med utökade funktioner som flikhantering, dubbla fönster och avancerade sökverktyg.  
-  *Aktiv 25+ år*  
-  *[Pris: $69.95](https://www.xyplorer.com/purchase.php) (Livstidslicens med gratis uppdateringar för alltid)*
+### Betalda
 
-- [**Total Commander**](https://www.ghisler.com/)  
-  En klassisk filhanterare med dubbelpanel och en omfattande uppsättning verktyg, känd för sin effektivitet och flexibilitet.  
-  *Aktiv 20+ år*  
-  *[Pris: 44.95Euro](https://www.ghisler.com/order.htm) (Livstidslicens med uppdateringar, ingen explicit garanti för framtida uppdateringar)*
-  
-- [**Xplorer2**](https://www.zabkat.com)  
-  Erbjuder ett tvåpaneligt gränssnitt med avancerade funktioner som filter, anpassningsbara visningslägen och skriptstöd.  
-  *Aktiv sedan 2002*  
-  *[Pris: $49.95](https://www.zabkat.com/x2buy.htm) (Livstidslicens med uppdateringar för "ultimate"-versionen)*
+Priserna ändras och står inte här — följ länken till respektive prissida. Det som däremot är värt att
+jämföra, och som håller sig, är **licensmodellen**: vad du faktiskt äger efteråt och hur länge du får
+uppdateringar.
 
-- [**Directory Opus**](https://www.gpsoft.com.au)  
-  Ett professionellt filhanteringsverktyg med hög grad av konfigurerbarhet, anpassningsbara arbetsytor och robust filoperation.  
-  *Aktiv 20+ år*  
-  *[Pris: Från au$89](https://www.gpsoft.com.au/#buynow) (Livstidslicens, 1 års gratis uppdateringar, sedan krävs prenumeration)*
+- [**File Pilot**](https://filepilot.tech/)
+  Ovanligt snabb, byggd från grunden med fokus på prestanda och skriptbara arbetsflöden. Har legat i
+  öppen beta under lång tid.
+  *Licens: [se prissidan](https://filepilot.tech/pricing) — avsikten har varit en livstidslicens för
+  Pro-versionen. Kontrollera vad som gäller innan du räknar med något.*
 
-## Trial-begränsningar
-### Begränsningar efter testperioden
+- [**XYplorer**](https://www.xyplorer.com)
+  Kraftfull och flexibel, med flikar, dubbla paneler, avancerad sökning och ett eget skriptspråk.
+  *Sedan slutet av 1990-talet.*
+  *Licens: [livstidslicens med fria uppdateringar för alltid](https://www.xyplorer.com/purchase.php)
+  — den mest generösa modellen i listan.*
 
-- **File Pilot**
-  - Trial-period: Obegränsad beta för närvarande
-  - Efter beta: Vissa avancerade funktioner kommer låsas till Pro-versionen
-  - [Läs mer om beta](https://filepilot.tech/beta)
+- [**Total Commander**](https://www.ghisler.com/)
+  Klassikern. Dubbelpanel, inbyggd FTP, arkivhantering och en plugin-arkitektur som överlevt
+  årtionden.
+  *Sedan 1993, ursprungligen som Windows Commander.*
+  *Licens: [livstidslicens](https://www.ghisler.com/order.htm) med uppdateringar, utan uttrycklig
+  garanti för framtida versioner.*
 
-- **XYplorer**
-  - Trial-period: 30 dagar
-  - Efter trial: Programmet slutar fungera helt
-  - Sparade konfigurationer finns kvar vid köp
-  - [Trial-information](https://www.xyplorer.com/free.php)
+- [**Xplorer2**](https://www.zabkat.com)
+  Tvåpanelsgränssnitt med filter, anpassningsbara visningslägen och skriptstöd.
+  *Sedan 2002.*
+  *Licens: [livstidslicens med uppdateringar](https://www.zabkat.com/x2buy.htm) för
+  "ultimate"-versionen.*
 
-- **Total Commander**
-  - Trial-period: 30 dagar
-  - Efter trial: Visningsfönster med nedräkning vid start
-  - Alla funktioner fortsätter fungera
-  - [Trial-detaljer](https://www.ghisler.com/order.htm)
+- [**Directory Opus**](https://www.gpsoft.com.au)
+  Det mest konfigurerbara alternativet. Anpassningsbara arbetsytor, robusta filoperationer och
+  omfattande metadata-hantering.
+  *Har rötterna på Amiga sedan 1990.*
+  *Licens: [livstidslicens med ett års uppdateringar](https://www.gpsoft.com.au/#buynow), därefter
+  krävs prenumeration för att fortsätta uppdatera. Den enda i listan som gör så — värt att veta i
+  förväg.*
 
-- **Xplorer2**
-  - Trial-period: 21 dagar
-  - Efter trial: Programmet slutar fungera helt
-  - Konfiguration sparas för senare aktivering
-  - [Trial-villkor](https://www.zabkat.com/x2lic.htm)
+## Efter testperioden
 
-- **Directory Opus**
-  - Trial-period: 60 dagar
-  - Efter trial: Programmet slutar fungera helt
-  - Sparade inställningar finns kvar vid köp
-  - [Trial och licensinformation](https://www.gpsoft.com.au/help/opus12/index.html#!Documents/Installation/trialandlicensing.htm)
+Testperiodernas längd ändras då och då, men vad som händer när de tar slut har varit stabilt i
+åratal. Det är också det som avgör om du kan utvärdera programmet i lugn och ro.
+
+| Program          | Efter testperioden                                                    |
+|------------------|-----------------------------------------------------------------------|
+| File Pilot       | Öppen beta — kontrollera aktuellt läge på deras sida                  |
+| Total Commander  | Fortsätter fungera fullt ut, med en nagruta vid start                 |
+| XYplorer         | Slutar fungera. Sparad konfiguration finns kvar vid köp               |
+| Xplorer2         | Slutar fungera. Konfigurationen sparas för senare aktivering          |
+| Directory Opus   | Slutar fungera. Inställningarna finns kvar vid köp                    |
+
+> **Total Commander är det enda som låter dig fortsätta.** Nagrutan har sett likadan ut i decennier
+> och programmet fungerar obehindrat i övrigt. Vill du utvärdera på riktigt, över månader och i
+> verkligt arbete, är det den enda som gör det praktiskt möjligt.
