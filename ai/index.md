@@ -1,289 +1,184 @@
 # AI - Artificiell Intelligens
 
-Artificiell intelligens (AI) handlar om att skapa system som kan efterlikna och förstärka mänskliga kognitiva processer. Detta dokument fokuserar på språkmodeller (LLMs) och hur du kan använda dem både online och lokalt.
+Artificiell intelligens (AI) handlar om att skapa system som kan efterlikna och förstärka mänskliga
+kognitiva processer. Den här sidan fokuserar på språkmodeller (LLM:er): hur de fungerar, vad namnen
+betyder och hur du väljer rätt modell för dina behov.
 
-## Innehållsförteckning
-- [AI - Artificiell Intelligens](#ai---artificiell-intelligens)
-  - [Innehållsförteckning](#innehållsförteckning)
-  - [Modeller](#modeller)
-    - [Grundläggande Koncept](#grundläggande-koncept)
-    - [Typer av Modeller](#typer-av-modeller)
-    - [Träningsprocess](#träningsprocess)
-  - [Modellnamn](#modellnamn)
-    - [Vad namnen betyder](#vad-namnen-betyder)
-  - [Översikt för Modellstorlekar, Kvantisering och Utrymme](#översikt-för-modellstorlekar-kvantisering-och-utrymme)
-    - [Modellstorlekar](#modellstorlekar)
-    - [Kvantisering](#kvantisering)
-    - [Disk och minneskrav](#disk-och-minneskrav)
-  - [Kombinationer – För- och Nackdelar](#kombinationer--för--och-nackdelar)
-    - [Liten Modell: 350M med Q4](#liten-modell-350m-med-q4)
-    - [Medelmodell: 7B med Q8](#medelmodell-7b-med-q8)
-    - [Stor Modell: 175B med FP32](#stor-modell-175b-med-fp32)
-    - [Jämför modeller online - rankings](#jämför-modeller-online---rankings)
-    - [Basmodeller för Hemmasnickare](#basmodeller-för-hemmasnickare)
-      - [Populära Plattformar](#populära-plattformar)
-      - [Fördelar med Open Source Modeller](#fördelar-med-open-source-modeller)
-      - [Populära Startmodeller](#populära-startmodeller)
-    - [Modeller (basmodeller)](#modeller-basmodeller)
-    - [Ytterligare modeller och dess varianter](#ytterligare-modeller-och-dess-varianter)
-  - [Jämförelse: Online Pro vs. Lokala Modeller](#jämförelse-online-pro-vs-lokala-modeller)
-  - [Användning - Online och Lokalt](#användning---online-och-lokalt)
-    - [Online](#online)
-    - [Lokalt](#lokalt)
-  - [Användning i Arbetssyfte](#användning-i-arbetssyfte)
-    - [Verktyg](#verktyg)
-      - [Copilot (GitHub Copilot)](#copilot-github-copilot)
-      - [Andra AI Plugins i Kodeditorer](#andra-ai-plugins-i-kodeditorer)
-      - [Sammanfattning](#sammanfattning)
+> **Om sidan:** Den är medvetet skriven för att hålla över tid. Du hittar inga rankinglistor, priser
+> eller versionsnummer här — sådant är inaktuellt inom några månader. För färska siffror, se
+> [Var du hittar aktuell information](#var-du-hittar-aktuell-information) längst ner.
+
+## Innehåll
+
+- [Modeller](#modeller)
+- [Modellnamn](#modellnamn)
+- [Storlek, kvantisering och minne](#storlek-kvantisering-och-minne)
+- [Hur du väljer modell](#hur-du-väljer-modell)
+- [Lokalt eller via API](#lokalt-eller-via-api)
+- [Var du hittar aktuell information](#var-du-hittar-aktuell-information)
 
 ## Modeller
 
-Modeller är hjärtat i moderna AI-system - de är matematiska eller datorbaserade strukturer som tränas på data för att upptäcka mönster och göra prediktioner. Tänk på dem som "hjärnor" som kan specialiseras för olika uppgifter:
+Modeller är hjärtat i moderna AI-system — matematiska strukturer som tränas på data för att upptäcka
+mönster och göra prediktioner. Tänk på dem som "hjärnor" som kan specialiseras för olika uppgifter.
 
-> **Tips**: När du väljer en modell, börja med att identifiera dina behov (textgenerering, kod, chat) och tillgängliga resurser (minne, processorkraft).
+### Grundläggande koncept
 
-### Grundläggande Koncept
-- **Arkitektur**: Hur modellen är uppbyggd internt
-  - Består av lager, noder och kopplingar
-  - Olika arkitekturer passar olika användningsområden
-  - Moderna modeller kan ha miljardtals parametrar
+- **Arkitektur**: hur modellen är uppbyggd internt.
+  - Består av lager, noder och kopplingar.
+  - Olika arkitekturer passar olika användningsområden.
+  - Moderna modeller kan ha miljardtals parametrar.
+- **Parametrar**: de inlärda vikterna. Fler parametrar ger i regel mer kapacitet — och kräver mer
+  minne. Det är den här siffran som står som "7b" eller "70b" i modellnamnet.
+- **Kontextfönster**: hur mycket text modellen kan hålla i huvudet samtidigt, mätt i tokens. Avgör om
+  du kan mata in ett helt dokument eller bara ett stycke.
+- **Token**: den enhet modellen faktiskt läser och skriver. Ungefär motsvarande en halv till en hel
+  kort ord på svenska — räkna med fler tokens per ord på svenska än på engelska.
 
-### Typer av Modeller
-- **Generella Modeller**: 
-  - Kan hantera många olika uppgifter
-  - Kräver ofta mer resurser
-  - Exempel: GPT-familjen, BERT
-  
-- **Specialiserade Modeller**:
-  - Optimerade för specifika uppgifter
-  - Ofta mindre och effektivare
-  - Exempel: Kodmodeller, bildmodeller
+### Typer av modeller
+
+- **Generella modeller**
+  - Kan hantera många olika uppgifter.
+  - Kräver ofta mer resurser.
+- **Specialiserade modeller**
+  - Optimerade för specifika uppgifter, till exempel kod eller bild.
+  - Ofta mindre och effektivare inom sitt område.
+- **Resonerande modeller**
+  - Producerar interna resonemangssteg innan svaret.
+  - Bättre på matematik, logik och flerstegsproblem — men långsammare och dyrare per svar.
 
 ### Träningsprocess
-- **Förträning**: 
-  - Modellen lär sig grundläggande förståelse
-  - Tränas på stora mängder ostrukturerad data
-  
-- **Finjustering**:
-  - Anpassning för specifika uppgifter
-  - Använder mindre, specialiserad data
-  
-- **Utvärdering**:
-  - Tester mot standardiserade uppgifter
-  - Mätning av prestanda och kvalitet
+
+- **Förträning**: modellen lär sig grundläggande språkförståelse från stora mängder ostrukturerad
+  data. Det är här merparten av beräkningskostnaden ligger.
+- **Finjustering**: anpassning för specifika uppgifter med mindre, specialiserad data.
+- **Instruktionsjustering**: modellen lär sig följa instruktioner istället för att bara fortsätta
+  text. Skillnaden mellan en *base*-modell och en *instruct*-modell.
+- **Utvärdering**: tester mot standardiserade uppgifter för att mäta prestanda och kvalitet.
+
+> **Base eller instruct?** Vill du chatta med modellen eller ge den instruktioner, välj alltid en
+> `instruct`- eller `chat`-variant. En ren basmodell fortsätter bara din text och känns trasig om du
+> förväntar dig ett svar.
 
 ## Modellnamn
 
-Modellnamn ger information om arkitektur, version, storlek och kvantisering. Exempel:
+Modellnamn ger information om familj, version, storlek och kvantisering. Exempel:
 
-- **GenericModelV2-7b-MGRPO-GGUF-Q4**
-- **GenericModel-14b-CoT-FP32**
+- **GenericModelV2-7b-Instruct-GGUF-Q4**
+- **GenericModel-14b-CoT-FP16**
 
 ### Vad namnen betyder
 
-1. **Modellfamilj**: "GenericModel" anger modellens namn.
-2. **Version**: "V2" visar att det är version 2.
-3. **Parameterstorlek**: "7b" eller "14b" anger antalet parametrar i miljarder.
-4. **Specialfunktioner**: "MGRPO" eller "CoT" visar unika egenskaper.
-5. **Kvantisering**: Indikeras med "Q4", "Q8", "F16", "FP32" för precisionen.
+1. **Modellfamilj** — `GenericModel` anger modellens namn och ursprung.
+2. **Version** — `V2` visar att det är andra generationen.
+3. **Parameterstorlek** — `7b` eller `14b` anger antalet parametrar i miljarder.
+4. **Variant** — `Instruct`, `Chat`, `Coder`, `CoT` med flera visar vad den är anpassad för.
+5. **Format** — `GGUF` är det vanligaste filformatet för lokal körning.
+6. **Kvantisering** — `Q4`, `Q8`, `FP16` anger precisionen, och därmed storleken.
 
-Dessa namn hjälper användaren att snabbt se modellens egenskaper och göra rätt val för sina behov.
+Namnen ser röriga ut men följer nästan alltid det här mönstret. När du kan läsa dem ser du direkt
+vad en modell kräver av din hårdvara innan du laddar ner flera gigabyte.
 
-> **Observera**: Modellnamn kan verka komplexa men följer oftast ett logiskt mönster som hjälper dig förstå modellens kapacitet och resurskrav.
+## Storlek, kvantisering och minne
 
-## Översikt för Modellstorlekar, Kvantisering och Utrymme
+### Parameterstorlek
 
-### Modellstorlekar
-- **350M**: Liten modell – passar enkla uppgifter.
-- **7B**: Medelmodell – bra balans mellan prestanda och resurser.
-- **175B**: Stor modell – hög kapacitet, men kräver mycket resurser.
+Antalet parametrar är den grövsta indikatorn på kapacitet. Grovt indelat:
+
+- **1–3B** — enkla uppgifter, sammanfattningar, klassificering. Går på nästan vad som helst.
+- **7–14B** — bra allround-balans. Den storlek de flesta börjar med lokalt.
+- **30–70B** — märkbart bättre på resonemang och kod. Kräver rejält med minne.
+- **100B+** — i praktiken molnkörning, om du inte har en serverpark.
 
 ### Kvantisering
-- **Q4**: Låg precision, mycket liten filstorlek.
-- **Q8**: Medelprecision, lagom stor fil.
-- **FP32**: Hög precision, större filstorlek.
 
-### Disk och minneskrav
-Modellens filstorlek och minneskrav beror på vald parameterstorlek och kvantisering; hög precision och fler parametrar kräver mer utrymme.
+Kvantisering minskar precisionen i varje vikt för att spara minne. Priset är en viss
+kvalitetsförlust, som är förvånansvärt liten ner till Q4 och märkbar därunder.
 
-> **Viktigt**: Kvantisering är ett sätt att minska modellens storlek med viss precisionsförlust. Välj nivå baserat på dina behov av precision vs. resurskrav.
+| Precision | Byte per parameter | Kommentar                                       |
+|-----------|--------------------|-------------------------------------------------|
+| FP32      | 4                  | Full precision. Används sällan för inferens.    |
+| FP16      | 2                  | Referenskvalitet. Standard vid träning.         |
+| Q8        | ~1                 | Praktiskt taget omöjlig att skilja från FP16.   |
+| Q5        | ~0,65              | Bra kompromiss om Q4 känns för tunn.            |
+| Q4        | ~0,5               | Vanligaste valet lokalt. Klart bäst per gigabyte. |
+| Q2/Q3     | ~0,3               | Går att köra, men kvaliteten sjunker tydligt.   |
 
-## Kombinationer – För- och Nackdelar
+> **Tumregel:** en större modell med hårdare kvantisering slår oftast en mindre modell med mildare.
+> En 14B i Q4 är i regel bättre än en 7B i Q8 — och tar ungefär lika mycket plats.
 
-### Liten Modell: 350M med Q4
-- **Fördelar:** Mycket låg lagrings- och minnesanvändning. Passar realtidsapplikationer.
-- **Nackdelar:** Lägre precision – kanske inte för komplexa uppgifter.
+### Räkna ut minnesbehovet
 
-### Medelmodell: 7B med Q8
-- **Fördelar:** Bra balans mellan prestanda och resursanvändning.
-- **Nackdelar:** Kompromiss mellan hastighet och precision.
+Formeln som inte blir inaktuell:
 
-### Stor Modell: 175B med FP32
-- **Fördelar:** Hög noggrannhet och kapacitet.
-- **Nackdelar:** Höga krav på minne och disk, och ofta långsammare.
+```
+minne ≈ parametrar × byte per parameter × 1,2
+```
 
-> **Praktiskt exempel**: En 7B-modell med Q8 kvantisering är ofta en bra startpunkt för lokala experiment, då den balanserar prestanda och resurskrav.
+Faktorn 1,2 täcker overhead. Utöver det tillkommer kontextfönstret, som växer med hur mycket text du
+matar in — räkna med några hundra megabyte extra vid normal användning, och betydligt mer om du
+utnyttjar hela kontextfönstret.
 
-### Jämför modeller online - rankings
-- [Artificial Analysis](https://artificialanalysis.ai) – Övergripande analys.
-- [Modellöversikt](https://artificialanalysis.ai/models) – Detaljerad modellinformation.
-- [YourGPT AI](https://yourgpt.ai/tools/llm-comparison-and-leaderboard) – Jämförelse och leaderboard.
-- [OpenRouter Rankings](https://openrouter.ai/rankings) – Prestandaöversikt.
-- [LM Arena](https://lmarena.ai) – Arena för LLM-jämförelse.
+| Modell | Q4      | Q8      | FP16    |
+|--------|---------|---------|---------|
+| 3B     | ~2 GB   | ~4 GB   | ~7 GB   |
+| 7B     | ~4 GB   | ~8 GB   | ~17 GB  |
+| 14B    | ~8 GB   | ~17 GB  | ~34 GB  |
+| 32B    | ~19 GB  | ~38 GB  | ~77 GB  |
+| 70B    | ~42 GB  | ~84 GB  | ~168 GB |
 
-### Basmodeller för Hemmasnickare
-Det finns flera platser där man kan hitta och experimentera med AI-modeller:
+Jämför med VRAM på ditt grafikkort. Får modellen inte plats hamnar delar av den i systemminnet, och
+hastigheten faller dramatiskt — det är skillnaden mellan ett läsbart svarstempo och att vänta.
 
-#### Populära Plattformar
-- [**Ollama**](https://ollama.com/search): Enkelt gränssnitt för att köra modeller lokalt
-  - Snabb installation och användning
-  - Bred samling av optimerade modeller
-  - Perfekt för nybörjare och experiment
+## Hur du väljer modell
 
-- [**Hugging Face**](https://huggingface.co): Den största plattformen för AI-modeller
-  - Omfattande modelldatabas
-  - Detaljerad dokumentation
-  - Aktiv community och forskning
-  - Möjlighet att träna egna modeller
+Modellnamnen ändras varje kvartal. Kriterierna gör det inte. Gå igenom dem i den här ordningen:
 
-#### Fördelar med Open Source Modeller
-- **Transparens**: Öppen källkod möjliggör granskning
-- **Anpassningsbarhet**: Kan modifieras för specifika behov
-- **Kostnadsfritt**: Inga licensavgifter
-- **Community-stöd**: Aktiv utveckling och förbättring
-- **Lokal körning**: Full kontroll över data och prestanda
+1. **Vad ska den göra?** Kod, resonemang, sammanfattning, översättning och bildförståelse har olika
+   vinnare. En kodspecialiserad modell på 7B slår ofta en generell på 30B — inom just kod.
+2. **Hur mycket minne har du?** Se tabellen ovan. Det här sätter det hårda taket, och de flesta av de
+   modeller du läser om ryms helt enkelt inte.
+3. **Hur långt kontextfönster behöver du?** Ska du mata in hela dokument eller kodbaser är det ofta
+   viktigare än rå modellkvalitet.
+4. **Latens eller kvalitet?** En resonerande modell tänker innan den svarar — bättre resultat, men
+   sekunder till minuter per svar. För autocomplete vill du ha motsatsen.
+5. **Hur bra är den på svenska?** De flesta öppna modeller är tränade övervägande på engelska.
+   Testa själv: kvaliteten på svenska varierar mycket mer mellan modeller än på engelska.
+6. **Vilken licens?** "Öppna vikter" betyder inte alltid fri kommersiell användning. Läs licensen om
+   det ska användas i jobbet.
 
-#### Populära Startmodeller
-- **För Textgenerering**: Llama, Mistral
-- **För Kodning**: StarCoder, CodeLlama
-- **För Översättning**: NLLB, M2M-100
-- **För Chatbot**: Vicuna, OpenHermes
-- **För Lätt Användning**: Phi-2, TinyLlama
+De modellfamiljer som varit stabila över tid och är rimliga att börja söka i: **Llama**, **Qwen**,
+**Gemma**, **Mistral**, **DeepSeek** och **Phi**. Vilken version som är bäst just nu ändras hela
+tiden — det är därför den här sidan inte försöker svara på det.
 
-### Modeller (basmodeller)
-- Llama (t.ex. Llama 3.x) – Populär för sin flexibilitet och stora community.
-- Qwen – Känd för snabbhet och effektivitet.
-- Phi – Används för sin enkelhet och låga resurskrav.
-- Deepseek – Erbjuder robust prestanda.
-- Gemma – Känd för sin snabba inferens och effektivitet.
-- ...och flera andra open source-modeller.
+## Lokalt eller via API
 
-### Ytterligare modeller och dess varianter
-- **deepscaler** – En finjusterad version av Deepseek-R1-Distilled-Qwen-1.5B som överträffar prestandan hos OpenAI:s o1-preview med bara 1.5B parametrar på populära matematikutvärderingar.
-- **deepseek-r1** – DeepSeeks första generation av resonemangsmodeller med jämförbar prestanda mot OpenAI-o1, inklusive sex täta modeller destillerade från DeepSeek-R1 baserade på Llama och Qwen.
-- **command-r7b** – Den minsta modellen i Cohere:s R-serie som levererar topphastighet, effektivitet och kvalitet för AI-applikationer på vanliga GPU:er och edge-enheter.
-- **deepseek-v3** – En stark Mixture-of-Experts (MoE) språkmodell med totalt 671B parametrar, med 37B aktiverade för varje token.
-- **phi4** – En 14B parametrars, state-of-the-art öppen modell från Microsoft.
-- **llama3.3** – En ny state-of-the-art 70B-modell som erbjuder prestanda liknande Llama 3.1 405B.
-- **llama3.2-vision** – Instruktionsanpassade modeller för bildresonemang, tillgängliga i storlekarna 11B och 90B.
-- **llama3.2** – Metas Llama 3.2 som erbjuder mindre varianter med 1B och 3B parametrar.
-- **qwen2.5-coder** – Kodspecificerade Qwen-modeller med betydande förbättringar inom kodgenerering, kodresonemang och kodkorrigering.
-- **qwen2.5** – Qwen2.5-modeller förtränade på Alibabas senaste stora dataset, med stöd upp till 128K tokens och flerspråkigt stöd.
+| | **Lokalt** | **Via API** |
+|---|---|---|
+| **Integritet** | Data lämnar aldrig maskinen | Data skickas till leverantören |
+| **Kostnad** | Engångskostnad för hårdvara | Löpande, per token |
+| **Kapacitet** | Begränsad av din VRAM | De största modellerna som finns |
+| **Tillgänglighet** | Fungerar offline | Kräver uppkoppling |
+| **Underhåll** | Du uppdaterar själv | Uppdateras åt dig — ibland utan förvarning |
+| **Kom igång** | Timmar | Minuter |
 
-## Jämförelse: Online Pro vs. Lokala Modeller
+De två utesluter inte varandra. En vanlig uppdelning är lokal modell för allt som rör känsliga data
+eller körs i loop, och API för de svåraste frågorna där kvaliteten faktiskt avgör.
 
-Många av de kraftfulla AI-modellerna som erbjuds online av stora företag har ofta motsvarigheter eller "syskon" i open source-världen som kan köras lokalt. Ibland är de lokala versionerna direkta nedskalade eller tidigare versioner av pro-modellerna, medan andra gånger är de inspirerade av samma arkitekturer. Att förstå dessa kopplingar kan hjälpa dig att välja rätt modell för dina behov, oavsett om du prioriterar toppmodern prestanda via ett API eller flexibiliteten och integriteten med en lokal modell. Det är dock viktigt att notera att en direkt och exakt versionsmatchning sällan är möjlig, då online-tjänster kontinuerligt uppdateras och open source-modeller följer sina egna utvecklingscykler.
-
-| Online Pro Modell (ofta stängd källkod) | Motsvarande Lokal Modell (ofta open source) | Kommentar                                                                                                |
-| :-------------------------------------- | :------------------------------------------ | :------------------------------------------------------------------------------------------------------- |
-| Google Gemini                           | Google Gemma                                | Gemma är en familj av lättviktsmodeller från Google, inspirerade av samma forskning och teknologi som Gemini. De är dock distinkta modellfamiljer med egna versioner (t.ex. Gemma 2B/7B) som inte direkt mappas till specifika Gemini API-versioner (t.ex. Gemini 1.5 Pro). |
-| Anthropic Claude                        | Starka öppna alternativ: Llama 3, Mistral (t.ex. Mixtral 8x7B), Qwen2 | Anthropic har inte släppt en officiell öppen källkodsversion av Claude. De listade modellerna är högpresterande alternativ från öppen källkodsgemenskapen. |
-| OpenAI GPT-serien (t.ex. GPT-4)         | Llama-familjen, Mistral, Phi                | Open source-modeller strävar efter att matcha GPT-seriens kapacitet, ofta med fokus på specifik prestanda. |
-| Cohere Command R+                       | Cohere Command R                            | Command R är en mindre, open source-version avsedd för lokal körning och anpassning.                   |
-
-> **Notera**: "Motsvarande" betyder inte alltid identisk prestanda eller funktionalitet. Online pro-modeller är oftast större och tränade på mer omfattande dataset. De lokala modellerna erbjuder dock en utmärkt balans mellan prestanda, anpassningsbarhet och tillgänglighet för utvecklare och entusiaster.
-
-## Användning - Online och Lokalt
-
-### Online
-Populära tjänster (Gratis med begränsningar):
-- [ChatGPT](https://chat.openai.com) (Plus: $20/månad, Team: $30/användare/månad)
-- [Microsoft CoPilot](https://copilot.cloud.microsoft/) (Pro: $30/månad)
-- [Google Gemini](https://gemini.google.com/app) (Advanced: $10/månad)
-- [Anthropic Claude](https://claude.ai/) (Pro: $20/månad)
-- [X Grok](https://grok.com/) (Premium X: $16/månad)
-- [Meta AI](https://meta.ai/llama) (Gratis)
-- [Replicate](https://replicate.com) - Plattform för att köra AI-modeller i molnet (Pay-per-use).
-- [Hugging Face](https://huggingface.co) - Öppen plattform för AI och maskininlärning (Pro: från $9/månad).
-
-> **Kom ihåg**: Online-tjänster är enklast att komma igång med, medan lokala installationer ger mer kontroll och integritet.
-
-### Lokalt
-För att köra AI-modeller lokalt och få ut maximal prestanda, se vår dedikerade guide: [Lokal AI](/ai/localai).
-
-> För dig som även vill förstå hur säkerhet och AI integreras i operativsystem, kika i [Operating Systems](/guides/operatingsystems).
-
-## Användning i Arbetssyfte
-
-- Effektivisering av arbetsflöden genom automatisering.
-- Analys och visualisering av stora datamängder.
-- Förbättrad beslutsfattande med hjälp av prediktiva modeller.
-
-> **Pro-tips för AI-användning**
-> 
-> För enklaste vägen in, börja med någon av onlinestjänsterna direkt i webbläsaren - det kräver minimal setup och ger snabba resultat, med det kräver mycket copy/paste. Om du behöver mer kontroll eller vill experimentera, testa lokala modeller via Ollama eller LM Studio.
+> Vill du köra lokalt, se den praktiska guiden: **[Lokal AI](/ai/localai)**.
 >
-> När du jobbar med källkod, använd gärna plugins direkt i din IDE. Kom ihåg att inkludera relevant kontext när du ställer frågor, och spara dina bästa prompts för återanvändning. För dokumentation, låt AI:n hjälpa till att expandera dina utkast men behåll din personliga stil.
->
-> Det viktigaste är att börja enkelt och utöka användningen i din egen takt - AI är ett verktyg som ska underlätta ditt arbete, inte komplicera det.
+> För hur AI byggs in i operativsystemen — och vad det innebär för integriteten — se
+> [Operating Systems](/guides/operatingsystems).
 
-### Verktyg
+## Var du hittar aktuell information
 
-- Visual Studio Code: Editor med stöd för AI, Copilot och olika plugins.
-  - [Copilot](https://copilot.cloud.microsoft/) erbjuder följande modeller (2025 Mars):
-    - Claude 3.5 Sonnet (Preview)
-    - Gemini 2.0 Flash (Preview)
-    - GPT 4o
-    - o1 (Preview)
-    - o3-mini (Preview)
-  - [Cline](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) Autonomous coding agent right in your IDE, capable of creating/editing files, running commands, using the browser, and more with your permission every step of the way.
-  - [Ollama Script Code](https://marketplace.visualstudio.com/items?itemName=OllamaScriptCode.ollama-script-code) Ollama Script Code provides autocompletion and chat for code using the Ollama models.
-  - [Continue](https://marketplace.visualstudio.com/items?itemName=Continue.continue) The leading open-source AI code assistant
-- Visual Studio 2022: Editor med stöd för AI (Copilot).
-  - [Copilot](https://copilot.cloud.microsoft/) erbjuder följande modeller (2025 Mars):
-    - GPT 4o
-    - o1 (Preview)
-    - o3-mini (Preview)
-    - Claude 3.5 Sonnet (Preview)
-  - [LLMCopilot2022](https://marketplace.visualstudio.com/items?itemName=foyoung365.LLMCopilot2022) Code using Ollama models
-  - [EntwineLLM](https://marketplace.visualstudio.com/items?itemName=EmilianoMusso.EntwineLLM) LLM coding assistant (code writing and review, refactor, unit tests generation, documentation)
-- LM Studio
-  - Användarvänligt gränssnitt för att:
-    - Hitta och ladda ner modeller
-    - Chatta med modeller direkt i programmet
-    - Hantera flera modeller samtidigt
-  - Inkluderar serverkomponent som:
-    - Kör modeller separat från användargränssnittet
-    - Stödjer API-anrop från externa applikationer
-    - Kan köras headless för serverinstallationer
-- Jan
-  - Användarvänligt gränssnitt för att:
-    - Hitta och ladda ner modeller
-    - Chatta med modeller direkt i programmet
-    - Hantera flera modeller samtidigt
-  - Inkluderar serverkomponent som:
-    - Kör modeller separat från användargränssnittet
-    - Stödjer API-anrop från externa applikationer
-- Ollama
-  - Fokuserad serverkomponent som:
-    - Erbjuder robust API för modellhantering
-    - Stödjer många olika modellformat
-    - Enkel kommandoradshantering
-  - Populära webb-baserade gränssnitt:
-    - [OpenWebUI](https://github.com/open-webui/open-webui)
-    - [Amica](https://github.com/semperai/amica)
-- LM Studio / Ollama - Serverintegration
-  - Gemensamma egenskaper:
-    - REST API på localhost (standard)
-    - Konfigurerbar port (LM Studio: 1234, Ollama: 11434)
-    - Kompatibla med de flesta IDE-plugins
-    - Stöd för olika modellformat (GGUF, GGML)
+Den här sidan förklarar principerna. För siffror som ändras varje vecka, gå direkt till källorna:
 
-#### Copilot (GitHub Copilot)
-GitHub Copilot är en **AI-assistent** som är djupt integrerad i kodeditorer som **Visual Studio Code** och **Visual Studio** och sätter ett tydligt exempel för hur en sådan integration bör fungera.  
-
-#### Andra AI Plugins i Kodeditorer
-Utöver Copilot finns det flera andra AI-baserade plugins som hjälper utvecklare att skriva kod mer effektivt och på ett mer intelligent sätt, dessa har oftast inte lika bra integration som Copilot, en fördel de har är att de kan nyttja lokala modeller från Ollama eller LM Studio.
-
-#### Sammanfattning
-AI-baserade plugins för kodeditorer är en kraftfull hjälp för att skriva kod snabbare och mer effektivt. Även om dessa verktyg har många fördelar, som snabbare kodning och realtidsförslag, måste utvecklare vara medvetna om att AI:n inte alltid är perfekt och att de bör granska förslagen noggrant.
+- [LM Arena](https://lmarena.ai) — blindtest där användare röstar mellan modellsvar. Bäst mått på
+  upplevd kvalitet.
+- [Artificial Analysis](https://artificialanalysis.ai/models) — kvalitet, hastighet och pris i samma
+  jämförelse.
+- [OpenRouter Rankings](https://openrouter.ai/rankings) — vad folk faktiskt använder, i volym.
+- [Ollama Library](https://ollama.com/search) — vilka modeller som går att köra lokalt idag, med
+  storlekar.
+- [Hugging Face](https://huggingface.co/models) — allt annat. Störst, rörigast, mest komplett.

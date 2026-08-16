@@ -17,6 +17,16 @@ no content changes.
 |---|---|
 | `programming/` (11 pages) | The whole Programmering section, retired 2026-08-16. |
 | `assets/images/` (7 PNGs) | SQL/NoSQL diagrams used only by `programming/database.md`. |
+| `assets/css/` (2 files) | Dead stylesheets, only ever linked from the architect layout. |
+| `_layouts/default_architect.html` | Orphaned layout from the abandoned architect theme. |
+| `ai/aiprogramming.md` | Retired 2026-08-16 — see below. |
+
+`ai/aiprogramming.md` was not merely stale. Its ranking table's primary column was
+self-declared placeholder data (*"Denna kolumn innehåller platshållare"*), one row's Elo was
+labelled `GISSAD`, and the "Open Source Modell" column named models that do not exist
+(`Gemma-2.5`, `Gemma-2.0-Flash`, `Gemma-1.5`, `DeepSeek-Coder-R1`). Kept for the record only —
+**do not restore it to the site.** Its handful of accurate points now live in `ai/index.md`
+and `ai/localai.md`.
 
 Only 5 of the 7 diagrams were ever referenced; `nosqlgraph.png` and `nosqlgraph2.png` were
 already orphaned before archiving.

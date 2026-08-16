@@ -7,6 +7,5 @@
 
 * [Artificial Intelligence](/ai)
   * [Lokal AI](/ai/localai)
-  * [AI Programming](/ai/aiprogramming)
 
 * [Favorit Sidor](/favorites)

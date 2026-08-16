@@ -20,12 +20,15 @@ not full docs.
 - **Layout**:
   - `_layouts/` — `default.html` (active, hacker theme base), `post.html` (extends default, adds
     date/tags).
-  - `ai/` — `index.md`, `aiprogramming.md`, `localai.md`.
+  - `ai/` — `index.md` (durable concepts: parameters, quantisation, memory arithmetic, how to
+    choose a model) and `localai.md` (practice: tools, hardware, local endpoints). Deliberately
+    contain no prices, leaderboard scores or model version numbers — those rot; see §7.
   - `guides/` — `browsers.md`, `filemanagers.md`, `operatingsystems.md`.
   - `_archive/` — retired content, kept in git but **not published** (Jekyll skips top-level
     `_`-prefixed directories). Holds the former `programming/` section (11 pages), its
-    `assets/images/` diagrams, the dead `assets/css/`, and the orphaned
-    `_layouts/default_architect.html`. See `_archive/README.md` for the restore procedure.
+    `assets/images/` diagrams, the dead `assets/css/`, the orphaned
+    `_layouts/default_architect.html`, and `ai/aiprogramming.md`. See `_archive/README.md` for
+    the restore procedure — and note that `ai/aiprogramming.md` is flagged do-not-restore.
   - `index.md` — Swedish-language homepage/nav linking the sections above; `favorites.md` — a
     2-line bookmark list; `debug_glitch.html` — see §7.
   - The repo ships **no CSS of its own** — all styling comes from the remote hacker theme.
@@ -65,6 +68,20 @@ theme — the repo ships no CSS. No database, no build-time templating beyond Je
 - Write clean, modern, readable code. Prioritise readability and maintainability.
 - Explain complex logic or significant architectural decisions.
 - Keep markup semantic and assets organised.
+
+**Content is written to be rot-proof.** This site is not maintained on a schedule, so pages must
+stay true without edits. Every defect found in the 2026-08-16 audit lived in the same construct: a
+table of perishable facts. Therefore:
+
+- **Don't** add prices, model version numbers, leaderboard scores, "current version" tables, or
+  hardware/OS compatibility matrices. Link to the live source instead and let the reader look.
+- **Do** write concepts, trade-offs, criteria and opinions — the parts that were still accurate
+  after two years untouched.
+- Prefer arithmetic a reader can apply (`params × bytes-per-weight`) over a snapshot of results.
+- Name product or model *families*, not versions — families last years, versions last months.
+- **Never publish a placeholder.** If a figure isn't known, omit the claim. Do not ship a table
+  with invented values and a note telling the reader to go fetch the real ones.
+- Content is Swedish; keep the existing direct, opinionated voice. Match the page you're editing.
 
 ---
 
