@@ -1,7 +1,16 @@
 # rsunde.github.io
 
 Ronnie Sunde's personal site — notes and guides, mostly in Swedish. Live at
-**[ronniesunde.com](https://ronniesunde.com)**.
+**[rsunde.github.io](https://rsunde.github.io)**.
+
+<!-- Custom domain retired 2026-08-19 — the domain lapsed, so the site serves from the
+     github.io address instead. Previous line, kept for restoration:
+
+     Ronnie Sunde's personal site — notes and guides, mostly in Swedish. Live at
+     **[ronniesunde.com](https://ronniesunde.com)**.
+
+     The CNAME file itself was moved, not deleted — see _archive/CNAME. -->
+
 
 ## What's here
 
@@ -29,7 +38,12 @@ because GitHub Pages force-enables `jekyll-optional-front-matter`, `jekyll-defau
 ## Deployment
 
 Automatic, via GitHub Pages' classic build pipeline, on every push to `master`. There is no
-GitHub Actions workflow and no build step in this repo. The custom domain is set by `CNAME`.
+GitHub Actions workflow and no build step in this repo.
+
+The site serves from `rsunde.github.io`. Because that is a GitHub *user* site rather than a
+project site, it is served from the domain root — so the absolute internal links used throughout
+(`/ai`, `/guides/browsers`) resolve correctly without a `baseurl`. Restoring a custom domain
+later means moving `_archive/CNAME` back to the root and pointing DNS at GitHub Pages.
 
 ## Notes
 

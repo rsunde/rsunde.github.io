@@ -20,6 +20,12 @@ no content changes.
 | `assets/css/` (2 files) | Dead stylesheets, only ever linked from the architect layout. |
 | `_layouts/default_architect.html` | Orphaned layout from the abandoned architect theme. |
 | `ai/aiprogramming.md` | Retired 2026-08-16 — see below. |
+| `CNAME` | Custom domain `ronniesunde.com`, retired 2026-08-19 when the domain lapsed. |
+
+`CNAME` is here rather than commented out in place because a CNAME file has no comment syntax —
+GitHub Pages reads the entire file as the hostname. Moving it is the only way to disable the
+custom domain without discarding the value. Restore with `git mv _archive/CNAME CNAME`, but only
+once the domain resolves to GitHub Pages again; a CNAME pointing at dead DNS takes the site down.
 
 `ai/aiprogramming.md` was not merely stale. Its ranking table's primary column was
 self-declared placeholder data (*"Denna kolumn innehåller platshållare"*), one row's Elo was

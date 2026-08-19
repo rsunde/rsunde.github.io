@@ -11,7 +11,7 @@ not full docs.
 ## 1. Project Overview
 
 - **rsunde.github.io** — Ronnie Sunde's personal Jekyll site/digital garden, served at the custom
-  domain `ronniesunde.com` (via `CNAME`). Content: three opinionated guides (OS privacy, browser
+  GitHub Pages address `rsunde.github.io`. Content: three opinionated guides (OS privacy, browser
   privacy, file managers), two AI notes (concepts, running models locally), and a short bookmarks
   page. All prose is Swedish. As of 2026-08-16 every page has been rewritten to the rot-proof
   standard in §4 — read that before adding content.
@@ -57,7 +57,7 @@ there's no in-repo build command to quote.
 ## 3. Architecture
 
 Static Jekyll site rendering Markdown through `_layouts/default.html` (the remote "hacker"
-theme) into HTML served at `ronniesunde.com`. New guide content goes in `guides/*.md`, AI notes
+theme) into HTML served at `rsunde.github.io`. New guide content goes in `guides/*.md`, AI notes
 in `ai/*.md` — each new page needs a manual link added to `index.md`'s nav list (there's no
 auto-generated index/collection). Retiring a page means moving it under `_archive/` (mirroring
 its original path) and dropping its nav link, not deleting it. All styling comes from the remote
@@ -120,6 +120,14 @@ docs/README reflect it.
   A plain `jekyll serve` without the `github-pages` gem copies those pages verbatim instead of
   rendering them, and errors on `{% seo %}`. Hence the `Gemfile` — always `bundle exec`.
   Adding front matter to pages is fine, but don't do it *believing the site is broken without it*.
+- **The custom domain `ronniesunde.com` was retired on 2026-08-19** — it lapsed. The site now
+  serves from `rsunde.github.io`. The `CNAME` file was moved to `_archive/CNAME`, not deleted,
+  because a CNAME file has **no comment syntax**: GitHub Pages reads the whole file as the domain,
+  so a `#`-prefixed line would be parsed as a hostname. Moving it is the only way to disable it
+  while keeping the value. Do not recreate a root `CNAME` unless the domain is live again and its
+  DNS points at GitHub Pages — a `CNAME` for a domain that doesn't resolve breaks the site.
+- Because `rsunde.github.io` is a GitHub **user** site, it is served from the domain root, so the
+  absolute internal links (`/ai`, `/guides/browsers`) work with no `baseurl`. Don't add one.
 - Don't add an `exclude:` key to `_config.yml` to hide `_archive/` — Jekyll's `exclude` **replaces**
   its default list (`Gemfile`, `vendor/`, `node_modules`, …) rather than extending it. The
   leading underscore already keeps `_archive/` out of the build.
