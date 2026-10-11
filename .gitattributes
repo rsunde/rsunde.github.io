@@ -1,0 +1,22 @@
+# line endings: managed by rAIgentHerder git hygiene policy
+* text=auto eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.7z binary
+*.gz binary
+*.exe binary
+*.dll binary
+*.so binary
+*.woff binary
+*.woff2 binary
+*.db binary
+*.sqlite binary
