@@ -67,8 +67,6 @@ theme — the repo ships no CSS. No database, no build-time templating beyond Je
 
 ## 4. Conventions
 
-- Write clean, modern, readable code. Prioritise readability and maintainability.
-- Explain complex logic or significant architectural decisions.
 - Keep markup semantic and assets organised.
 
 **Content is written to be rot-proof.** This site is not maintained on a schedule, so pages must
